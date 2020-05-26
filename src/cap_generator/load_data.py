@@ -12,7 +12,7 @@ PATH_DATA = f'{PATH_CURRENT}/data'
 PATH_MODEL = f'{PATH_CURRENT}/models'
 PATH_NOTEBOOKS = f'{PATH_CURRENT}/notebooks'
 
-PATH_DEV_IMAGES = f'{PATH_CURRENT}/data/raw/flickr8k_images_dev'
+PATH_DEV_IMAGES = f'{PATH_CURRENT}/data/raw/flickr8k_images'
 PATH_TEST_IMAGES = f'{PATH_CURRENT}/data/raw/flickr8k_images'
 PATH_TRAIN_IMAGES = f'{PATH_CURRENT}/data/raw/flickr8k_images'
 PATH_TRAIN_IMAGES_TEXT = f'{PATH_CURRENT}/data/raw/flickr8k_images_text'
