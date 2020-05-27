@@ -59,6 +59,8 @@ def extract_features(filename):
   image = preprocess_input(image)
   # get features
   feature = model.predict(image, verbose=0)
+  del model
+  del image
   return feature
 
 # generate a description for an image
@@ -99,7 +101,7 @@ def generate_desc(model, tokenizer, photo, index_word, max_length, beam_size=5):
     # order all candidates by score
     ordered = sorted(all_caps, key=lambda tup:tup[1], reverse=True)
     captions = ordered[:beam_size]
-
+    
   return captions
 
 # evaluate the skill of the model
