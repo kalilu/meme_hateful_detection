@@ -1,0 +1,6 @@
+2020-05-28T14:13:10 INFO: Loading datasets
+2020-05-28T14:13:32 INFO: Torch version is: 1.5.0
+2020-05-28T14:13:32 INFO: Starting test inference predictions
+2020-05-28T14:13:32 INFO: Predicting for hateful_memes
+2020-05-28T14:21:41 INFO: Wrote evalai predictions for hateful_memes to /home/jupyter/meme_hateful_detection/notebooks/save/hateful_memes_mmbt_10072208/reports/hateful_memes_run_test_2020-05-28T14:21:41.csv
+2020-05-28T14:21:41 INFO: Finished predicting
