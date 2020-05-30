@@ -1,7 +1,7 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 30873708
+  seed: 15073556
   experiment_name: run
   max_updates: 22000
   max_epochs: null
