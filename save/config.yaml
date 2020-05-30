@@ -1,7 +1,7 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 30873708
+  seed: 4075747
   experiment_name: run
   max_updates: 22000
   max_epochs: null
@@ -12,7 +12,7 @@ training:
   should_not_log: false
   tensorboard: false
   batch_size: 64
-  num_workers: 4
+  num_workers: 0
   fast_read: false
   dataset_size_proportional_sampling: true
   pin_memory: false
@@ -41,32 +41,43 @@ evaluation:
   - accuracy
   - binary_f1
   - roc_auc
-  predict: 'true'
+  predict: false
   predict_file_format: csv
 model_config:
-  visual_bert:
-    bert_model_name: bert-base-uncased
-    training_head_type: classification
-    visual_embedding_dim: 2048
-    special_visual_initialize: true
-    embedding_strategy: plain
-    bypass_transformer: false
-    output_attentions: false
-    output_hidden_states: false
-    random_initialize: false
-    freeze_base: false
-    finetune_lr_multiplier: 1
-    num_labels: 2
+  concat_vl:
+    num_classes: 2
+    dropout: 0.1
+    image_encoder:
+      type: resnet152
+      params:
+        pretrained: true
+        pool_type: avg
+        num_output_features: 1
+    text_encoder:
+      params:
+        module: linear
+        in_dim: 300
+        out_dim: 300
+    fusion:
+      params:
+        in_features: 2348
+        out_features: 512
     losses:
     - cross_entropy
-    model: visual_bert
+    classifier:
+      type: mlp
+      params:
+        in_dim: 512
+        out_dim: 2
+        num_layers: 0
+    model: concat_vl
 dataset_config:
   hateful_memes:
     data_dir: /home/jupyter/.cache/torch/mmf/data/datasets
     depth_first: false
     fast_read: false
-    use_images: false
-    use_features: true
+    use_images: true
+    use_features: false
     images:
       train:
       - hateful_memes/defaults/images/
@@ -91,9 +102,9 @@ dataset_config:
     max_features: 100
     processors:
       text_processor:
-        type: bert_tokenizer
+        type: fasttext_sentence_vector
         params:
-          max_length: 14
+          max_length: null
           vocab:
             type: intersected
             embedding_name: glove.6B.300d
@@ -101,12 +112,7 @@ dataset_config:
           preprocessor:
             type: simple_sentence
             params: {}
-          tokenizer_config:
-            type: bert-base-uncased
-            params:
-              do_lower_case: true
-          mask_probability: 0
-          max_seq_length: 128
+          model_file: wiki.en.bin
       bbox_processor:
         type: bbox
         params:
@@ -137,11 +143,11 @@ dataset_config:
               - 0.12221994
               - 0.12145835
               - 0.14380469
-    return_features_info: true
+    return_features_info: false
 datasets: hateful_memes
-model: visual_bert
-config: configs/visual_bert/from_coco.yaml
-run_type: test
+model: concat_vl
+config: configs/experiments/defaults.yaml
+run_type: train_inference
 optimizer:
   type: adam_w
   params:
@@ -161,7 +167,7 @@ env:
   log_dir: ''
   report_dir: ''
   tensorboard_logdir: ''
-  user_dir: ..
+  user_dir: .
 distributed:
   init_method: null
   rank: 0
@@ -173,11 +179,10 @@ checkpoint:
   resume: false
   resume_file: null
   resume_best: false
-  resume_pretrained: true
-  resume_zoo: visual_bert.finetuned.hateful_memes.from_coco
+  resume_pretrained: false
+  resume_zoo: null
   zoo_config_override: false
-  pretrained_state_mapping:
-    model.bert: model.bert
+  pretrained_state_mapping: {}
   save_git_details: true
   reset:
     all: false
