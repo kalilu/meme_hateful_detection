@@ -1,7 +1,7 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 15073556
+  seed: 25797415
   experiment_name: run
   max_updates: 22000
   max_epochs: null
@@ -31,7 +31,7 @@ training:
   use_warmup: false
   warmup_factor: 0.2
   warmup_iterations: 1000
-  device: cpu
+  device: cuda
   local_rank: null
   verbose_dump: false
   find_unused_parameters: true
@@ -41,7 +41,7 @@ evaluation:
   - accuracy
   - binary_f1
   - roc_auc
-  predict: 'true'
+  predict: false
   predict_file_format: csv
 model_config:
   visual_bert:
@@ -141,7 +141,7 @@ dataset_config:
 datasets: hateful_memes
 model: visual_bert
 config: configs/visual_bert/from_coco.yaml
-run_type: test
+run_type: val
 optimizer:
   type: adam_w
   params:
