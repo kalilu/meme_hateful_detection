@@ -24,6 +24,8 @@ evaluation:
   - accuracy
   - binary_f1
   - roc_auc
+  predict: true
+  predict_file_format: csv
 
 training:
   batch_size: 32
@@ -32,6 +34,20 @@ training:
   early_stop:
     criteria: hateful_memes/roc_auc
     minimize: false
+  log_interval: 100
+  log_format: json
+  log_detailed_config: true
+  # After `checkpoint_interval` iterations, MMF will make a snapshot
+  # which will involve creating a checkpoint for current training scenarios
+  checkpoint_interval: 1000
+  # This will evaluate evaluation metrics on whole validation set after
+  # evaluation interval
+  evaluation_interval: 1000
+  # Whether gradients should be clipped
+  clip_gradients: false
+  # Mode for clip norm
+  clip_norm_mode: all
+  evaluate_metrics: true
 
 checkpoint:
   pretrained_state_mapping:
