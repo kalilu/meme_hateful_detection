@@ -1,0 +1,28 @@
+includes:
+- ./text.yaml
+- configs/datasets/hateful_memes/bert.yaml
+- configs/models/unimodal/bert.yaml
+
+model_config:
+  unimodal_text:
+    classifier:
+      type: mlp
+      params:
+        in_dim: 768
+        num_layers: 2
+
+evaluation:
+  metrics:
+  - accuracy
+  - binary_f1
+  - roc_auc
+  predict: true
+  predict_file_format: csv
+
+training:
+  batch_size: 128
+  log_interval: 100
+  log_format: json
+  log_detailed_config: true
+  evaluate_metrics: true
+  verbose_dump: true

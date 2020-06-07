@@ -1,0 +1,25 @@
+includes:
+- ./image.yaml
+- configs/datasets/hateful_memes/with_features.yaml
+- configs/models/unimodal/with_features.yaml
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 5e-5
+    eps: 1e-8
+
+evaluation:
+  metrics:
+  - accuracy
+  - binary_f1
+  - roc_auc
+  predict: true
+  predict_file_format: csv
+
+training:
+  log_interval: 100
+  log_format: json
+  log_detailed_config: true
+  evaluate_metrics: true
+  verbose_dump: true
