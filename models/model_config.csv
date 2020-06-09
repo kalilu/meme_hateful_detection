@@ -1,0 +1,12 @@
+﻿baseline,model_key,pretrained_key,save_dir,baseline_config,custom_config
+Image-Grid,unimodal_image,unimodal_image.hateful_memes.images,unimodal_image_grid,configs/unimodal/image.yaml,configs/unimodal/image_custom.yaml
+Image-Region,unimodal_image,unimodal_image.hateful_memes.features,unimodal_image_region,configs/unimodal/with_features.yaml,configs/unimodal/with_features_custom.yaml
+Text BERT,unimodal_text,unimodal_text.hateful_memes.bert,unimodal_text,configs/unimodal/bert.yaml,configs/unimodal/bert_custom.yaml
+Late Fusion,late_fusion,late_fusion.hateful_memes,late_fusion,configs/late_fusion/defaults.yaml,configs/late_fusion/defaults_custom.yaml
+ConcatBERT,concat_bert,concat_bert.hateful_memes,concat_bert,configs/concat_bert/defaults.yaml,configs/concat_bert/defaults_custom.yaml
+MMBT-Grid,mmbt,mmbt.hateful_memes.images,mmbt_grid,configs/mmbt/defaults.yaml,configs/mmbt/defaults_custom.yaml
+MMBT-Region,mmbt,mmbt.hateful_memes.features,mmbt_region,configs/mmbt/with_features.yaml,configs/mmbt/with_features_custom.yaml
+ViLBERT,vilbert,vilbert.finetuned.hateful_memes.direct,vilbert_direct,configs/vilbert/defaults.yaml,configs/vilbert/defaults_custom.yaml
+Visual BERT,visual_bert,visual_bert.finetuned.hateful_memes.direct,visual_bert_direct,configs/visual_bert/direct.yaml,configs/visual_bert/direct_custom.yaml
+ViLBERT CC,vilbert,vilbert.finetuned.hateful_memes.from_cc_original,vilbert_from_cc,configs/vilbert/from_cc.yaml,configs/vilbert/from_cc_custom.yaml
+Visual BERT COCO,visual_bert,visual_bert.finetuned.hateful_memes.from_coco,visual_bert_from_coco,configs/visual_bert/from_coco.yaml,configs/visual_bert/from_coco_custom.yaml

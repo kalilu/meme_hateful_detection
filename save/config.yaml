@@ -1,17 +1,17 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 59807534
+  seed: 46373263
   experiment_name: run
   max_updates: 22000
   max_epochs: null
   log_interval: 100
   logger_level: info
-  log_format: json
-  log_detailed_config: true
+  log_format: simple
+  log_detailed_config: false
   should_not_log: false
-  tensorboard: true
-  batch_size: 32
+  tensorboard: false
+  batch_size: 64
   num_workers: 4
   fast_read: false
   dataset_size_proportional_sampling: true
@@ -33,46 +33,40 @@ training:
   warmup_iterations: 1000
   device: cuda
   local_rank: null
-  verbose_dump: true
-  find_unused_parameters: false
-  evaluate_metrics: true
+  verbose_dump: false
+  find_unused_parameters: true
+  evaluate_metrics: false
 evaluation:
   metrics:
   - accuracy
   - binary_f1
   - roc_auc
-  predict: true
+  predict: 'true'
   predict_file_format: csv
 model_config:
-  unimodal_image:
-    direct_features_input: false
+  visual_bert:
+    bert_model_name: bert-base-uncased
+    training_head_type: classification
+    visual_embedding_dim: 2048
+    special_visual_initialize: true
+    embedding_strategy: plain
+    bypass_transformer: false
+    output_attentions: false
+    output_hidden_states: false
+    random_initialize: false
     freeze_base: false
     finetune_lr_multiplier: 1
-    modal_hidden_size: 2048
     num_labels: 2
-    modal_encoder:
-      type: resnet152
-      params:
-        pretrained: true
-        pool_type: avg
-        num_output_features: 1
-    classifier:
-      type: mlp
-      params:
-        in_dim: 2048
-        out_dim: 2
-        hidden_dim: 768
-        num_layers: 2
     losses:
-    - type: cross_entropy
-    model: unimodal_image
+    - cross_entropy
+    model: visual_bert
 dataset_config:
   hateful_memes:
     data_dir: /home/jupyter/meme_hateful_detection/data/raw/datasets
     depth_first: false
     fast_read: false
-    use_images: true
-    use_features: false
+    use_images: false
+    use_features: true
     images:
       train:
       - hateful_memes/defaults/images/
@@ -97,7 +91,7 @@ dataset_config:
     max_features: 100
     processors:
       text_processor:
-        type: vocab
+        type: bert_tokenizer
         params:
           max_length: 14
           vocab:
@@ -107,6 +101,12 @@ dataset_config:
           preprocessor:
             type: simple_sentence
             params: {}
+          tokenizer_config:
+            type: bert-base-uncased
+            params:
+              do_lower_case: true
+          mask_probability: 0
+          max_seq_length: 128
       bbox_processor:
         type: bbox
         params:
@@ -137,15 +137,15 @@ dataset_config:
               - 0.12221994
               - 0.12145835
               - 0.14380469
-    return_features_info: false
+    return_features_info: true
 datasets: hateful_memes
-model: unimodal_image
-config: configs/unimodal/image_custom.yaml
-run_type: train
+model: visual_bert
+config: configs/visual_bert/from_coco.yaml
+run_type: test
 optimizer:
   type: adam_w
   params:
-    lr: 1.0e-05
+    lr: 5.0e-05
     eps: 1.0e-08
 scheduler:
   type: warmup_linear
@@ -173,11 +173,11 @@ checkpoint:
   resume: false
   resume_file: null
   resume_best: false
-  resume_pretrained: false
-  resume_zoo: unimodal_image.hateful_memes.images
+  resume_pretrained: true
+  resume_zoo: visual_bert.finetuned.hateful_memes.from_coco
   zoo_config_override: false
   pretrained_state_mapping:
-    base: base
+    model.bert: model.bert
   save_git_details: true
   reset:
     all: false

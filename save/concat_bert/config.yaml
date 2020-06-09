@@ -1,7 +1,7 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 36363647
+  seed: 28702595
   experiment_name: run
   max_updates: 22000
   max_epochs: null
@@ -10,8 +10,8 @@ training:
   log_format: json
   log_detailed_config: true
   should_not_log: false
-  tensorboard: false
-  batch_size: 64
+  tensorboard: true
+  batch_size: 32
   num_workers: 4
   fast_read: false
   dataset_size_proportional_sampling: true
@@ -161,7 +161,7 @@ dataset_config:
 datasets: hateful_memes
 model: concat_bert
 config: configs/concat_bert/defaults_custom.yaml
-run_type: train_inference
+run_type: train
 optimizer:
   type: adam_w
   params:
@@ -178,9 +178,9 @@ env:
   model_zoo: configs/zoo/models.yaml
   data_dir: /home/jupyter/meme_hateful_detection/data/raw
   save_dir: /home/jupyter/meme_hateful_detection/save/concat_bert
-  log_dir: /home/jupyter/meme_hateful_detection/save/logs
+  log_dir: /home/jupyter/meme_hateful_detection/logs
   report_dir: /home/jupyter/meme_hateful_detection/save/reports
-  tensorboard_logdir: ''
+  tensorboard_logdir: /home/jupyter/meme_hateful_detection/tensor_logs
   user_dir: /home/jupyter/meme_hateful_detection
 distributed:
   init_method: null
@@ -194,7 +194,7 @@ checkpoint:
   resume_file: null
   resume_best: false
   resume_pretrained: false
-  resume_zoo: null
+  resume_zoo: concat_bert.hateful_memes
   zoo_config_override: false
   pretrained_state_mapping:
     base: base
