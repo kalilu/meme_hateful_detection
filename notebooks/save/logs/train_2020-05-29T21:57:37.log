@@ -1,4 +1,0 @@
-2020-05-29T21:57:37 INFO: Loading datasets
-2020-05-29T21:57:41 WARNING: /home/jupyter/mmf/mmf/models/base_model.py:97: UserWarning: No losses are defined in model configuration. You are expected to return loss in your return dict from forward.
-  "No losses are defined in model configuration. You are expected "
-

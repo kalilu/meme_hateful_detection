@@ -1,7 +1,7 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 43153437
+  seed: 21968999
   experiment_name: run
   max_updates: 22000
   max_epochs: null
@@ -10,7 +10,7 @@ training:
   log_format: json
   log_detailed_config: true
   should_not_log: false
-  tensorboard: true
+  tensorboard: false
   batch_size: 32
   num_workers: 4
   fast_read: false
@@ -44,47 +44,40 @@ evaluation:
   predict: true
   predict_file_format: csv
 model_config:
-  unimodal_text:
-    bert_model_name: bert-base-uncased
+  unimodal_image:
+    direct_features_input: true
     freeze_base: false
     finetune_lr_multiplier: 1
-    text_hidden_size: 768
+    modal_hidden_size: 2048
     num_labels: 2
-    text_encoder:
-      type: transformer
+    modal_encoder:
+      type: finetune_faster_rcnn_fpn_fc7
       params:
-        operator: sum
-        embedding_params:
-          type: vocab
-          params:
-            type: intersected
-            embedding_name: glove.6B.300d
-            embedding_dim: 300
-            data_dir: /home/jupyter/meme_hateful_detection/data/raw
-            vocab_file: vocabs/vocabulary_100k.txt
-        bert_model_name: bert-base-uncased
-        hidden_size: 768
-        num_hidden_layers: 12
-        num_attention_heads: 12
-        output_attentions: false
-        output_hidden_states: false
+        pretrained: true
+        pool_type: avg
+        num_output_features: 1
+        in_dim: 2048
+        bias_file: models/detectron.defaults/fc7_b.pkl
+        weights_file: models/detectron.defaults/fc7_w.pkl
+        model_data_dir: /home/jupyter/meme_hateful_detection/data/raw
     classifier:
       type: mlp
       params:
-        in_dim: 768
+        in_dim: 2048
         out_dim: 2
         hidden_dim: 768
         num_layers: 2
     losses:
     - type: cross_entropy
-    model: unimodal_text
+    model_data_dir: /home/jupyter/meme_hateful_detection/data/raw
+    model: unimodal_image
 dataset_config:
   hateful_memes:
     data_dir: /home/jupyter/meme_hateful_detection/data/raw/datasets
     depth_first: false
     fast_read: false
-    use_images: true
-    use_features: false
+    use_images: false
+    use_features: true
     images:
       train:
       - hateful_memes/defaults/images/
@@ -109,7 +102,7 @@ dataset_config:
     max_features: 100
     processors:
       text_processor:
-        type: bert_tokenizer
+        type: vocab
         params:
           max_length: 14
           vocab:
@@ -119,12 +112,6 @@ dataset_config:
           preprocessor:
             type: simple_sentence
             params: {}
-          tokenizer_config:
-            type: bert-base-uncased
-            params:
-              do_lower_case: true
-          mask_probability: 0
-          max_seq_length: 128
       bbox_processor:
         type: bbox
         params:
@@ -155,11 +142,11 @@ dataset_config:
               - 0.12221994
               - 0.12145835
               - 0.14380469
-    return_features_info: false
+    return_features_info: true
 datasets: hateful_memes
-model: unimodal_text
-config: configs/unimodal/bert_custom.yaml
-run_type: train
+model: unimodal_image
+config: configs/unimodal/with_features_custom.yaml
+run_type: train_inference
 optimizer:
   type: adam_w
   params:
@@ -175,10 +162,10 @@ env:
   dataset_zoo: configs/zoo/datasets.yaml
   model_zoo: configs/zoo/models.yaml
   data_dir: /home/jupyter/meme_hateful_detection/data/raw
-  save_dir: /home/jupyter/meme_hateful_detection/save/unimodal_text
-  log_dir: /home/jupyter/meme_hateful_detection/logs
+  save_dir: /home/jupyter/meme_hateful_detection/save/unimodal_image
+  log_dir: /home/jupyter/meme_hateful_detection/save/logs
   report_dir: /home/jupyter/meme_hateful_detection/save/reports
-  tensorboard_logdir: /home/jupyter/meme_hateful_detection/tensor_logs
+  tensorboard_logdir: ''
   user_dir: /home/jupyter/meme_hateful_detection
 distributed:
   init_method: null
@@ -192,7 +179,7 @@ checkpoint:
   resume_file: null
   resume_best: false
   resume_pretrained: false
-  resume_zoo: unimodal_text.hateful_memes.bert
+  resume_zoo: null
   zoo_config_override: false
   pretrained_state_mapping:
     base: base

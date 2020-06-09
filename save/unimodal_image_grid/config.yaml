@@ -1,7 +1,7 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 54272757
+  seed: 57604110
   experiment_name: run
   max_updates: 22000
   max_epochs: null
@@ -10,7 +10,7 @@ training:
   log_format: json
   log_detailed_config: true
   should_not_log: false
-  tensorboard: false
+  tensorboard: true
   batch_size: 32
   num_workers: 4
   fast_read: false
@@ -45,21 +45,17 @@ evaluation:
   predict_file_format: csv
 model_config:
   unimodal_image:
-    direct_features_input: true
+    direct_features_input: false
     freeze_base: false
     finetune_lr_multiplier: 1
     modal_hidden_size: 2048
     num_labels: 2
     modal_encoder:
-      type: finetune_faster_rcnn_fpn_fc7
+      type: resnet152
       params:
         pretrained: true
         pool_type: avg
         num_output_features: 1
-        in_dim: 2048
-        bias_file: models/detectron.defaults/fc7_b.pkl
-        weights_file: models/detectron.defaults/fc7_w.pkl
-        model_data_dir: /home/jupyter/meme_hateful_detection/data/raw
     classifier:
       type: mlp
       params:
@@ -69,15 +65,14 @@ model_config:
         num_layers: 2
     losses:
     - type: cross_entropy
-    model_data_dir: /home/jupyter/meme_hateful_detection/data/raw
     model: unimodal_image
 dataset_config:
   hateful_memes:
     data_dir: /home/jupyter/meme_hateful_detection/data/raw/datasets
     depth_first: false
     fast_read: false
-    use_images: false
-    use_features: true
+    use_images: true
+    use_features: false
     images:
       train:
       - hateful_memes/defaults/images/
@@ -142,15 +137,15 @@ dataset_config:
               - 0.12221994
               - 0.12145835
               - 0.14380469
-    return_features_info: true
+    return_features_info: false
 datasets: hateful_memes
 model: unimodal_image
-config: configs/unimodal/with_features_custom.yaml
-run_type: train_inference
+config: configs/unimodal/image_custom.yaml
+run_type: train
 optimizer:
   type: adam_w
   params:
-    lr: 5.0e-05
+    lr: 1.0e-05
     eps: 1.0e-08
 scheduler:
   type: warmup_linear
@@ -162,10 +157,10 @@ env:
   dataset_zoo: configs/zoo/datasets.yaml
   model_zoo: configs/zoo/models.yaml
   data_dir: /home/jupyter/meme_hateful_detection/data/raw
-  save_dir: /home/jupyter/meme_hateful_detection/save/unimodal_image
-  log_dir: /home/jupyter/meme_hateful_detection/save/logs
+  save_dir: /home/jupyter/meme_hateful_detection/save/unimodal_image_grid
+  log_dir: /home/jupyter/meme_hateful_detection/logs
   report_dir: /home/jupyter/meme_hateful_detection/save/reports
-  tensorboard_logdir: ''
+  tensorboard_logdir: /home/jupyter/meme_hateful_detection/tensor_logs
   user_dir: /home/jupyter/meme_hateful_detection
 distributed:
   init_method: null
@@ -179,7 +174,7 @@ checkpoint:
   resume_file: null
   resume_best: false
   resume_pretrained: false
-  resume_zoo: null
+  resume_zoo: unimodal_image.hateful_memes.images
   zoo_config_override: false
   pretrained_state_mapping:
     base: base

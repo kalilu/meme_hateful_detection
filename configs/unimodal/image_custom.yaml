@@ -34,6 +34,7 @@ training:
   early_stop:
     criteria: hateful_memes/roc_auc
     minimize: false
+  tensorboard: true
   log_interval: 100
   log_format: json
   log_detailed_config: true
@@ -47,3 +48,11 @@ training:
 checkpoint:
   pretrained_state_mapping:
     base: base
+  
+env:
+  cache_dir: ${resolve_cache_dir:MMF_CACHE_DIR}
+  data_dir: ${resolve_dir:MMF_DATA_DIR, data}
+  save_dir: ${env:MMF_SAVE_DIR, ./save}
+  log_dir: ${env:MMF_LOG_DIR,}
+  report_dir: ${env:MMF_REPORT_DIR,}
+  tensorboard_logdir: ${env:MMF_TENSORBOARD_LOGDIR,}
