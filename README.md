@@ -99,6 +99,7 @@ All the information about the dataset and the challenge can be found in: https:/
 ## Results
 Overall the multimodal models are more accurate compared to unimodal models.
 
+<img src="./reports/figures/val_hateful_memes_accuracy.svg" />
 <img src="./reports/figures/train_res.png" />
 <img src="./reports/figures/val_res.png" />
 
