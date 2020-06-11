@@ -93,7 +93,7 @@ All the information about the dataset and the challenge can be found in: https:/
 
 --------
 - [Results](#results)
-Overall the multimodal models are more accurate
+Overall the multimodal models are more accurate compared to unimodal models.
 
 <img src="./reports/figures/train_res.png" />
 <img src="./reports/figures/val_res.png" />
