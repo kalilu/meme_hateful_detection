@@ -1,7 +1,7 @@
-#  Final Project Ironhack Data Bootcamp: Meme sentiment detection using Machine Learning
+Final Project Ironhack Data Bootcamp: Meme sentiment detection using Machine Learning
 ========================================================================================
-Karla Vizcarra
 <img src="./reports/figures/haters2.gif" />
+Karla Vizcarra
 *Data Part Time Barcelona Dic 2019*
 
 ## Content
