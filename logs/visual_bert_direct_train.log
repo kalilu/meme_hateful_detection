@@ -1,0 +1,682 @@
+2020-06-10T09:28:14 INFO: Loading datasets
+2020-06-10T09:28:19 INFO: CUDA Device 0 is: Tesla T4
+2020-06-10T09:28:23 INFO: Torch version is: 1.5.0+cu101
+2020-06-10T09:28:23 INFO: ===== Model =====
+2020-06-10T09:28:23 INFO: VisualBERT(
+  (model): VisualBERTForClassification(
+    (bert): VisualBERTBase(
+      (embeddings): BertVisioLinguisticEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (token_type_embeddings_visual): Embedding(2, 768)
+        (position_embeddings_visual): Embedding(512, 768)
+        (projection): Linear(in_features=2048, out_features=768, bias=True)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (1): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (2): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (3): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (4): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (5): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (6): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (7): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (8): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (9): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (10): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (11): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+    (classifier): Sequential(
+      (0): BertPredictionHeadTransform(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      )
+      (1): Linear(in_features=768, out_features=2, bias=True)
+    )
+  )
+  (losses): Losses()
+)
+2020-06-10T09:28:23 INFO: Total Parameters: 112044290. Trained Parameters: 112044290
+2020-06-10T09:28:23 INFO: Starting training...
+2020-06-10T09:28:25 WARNING: /pytorch/torch/csrc/utils/python_arg_parser.cpp:756: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha)
+
+2020-06-10T09:28:25 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T09:29:52 INFO: progress: 100/22000, train/total_loss: 0.6497, train/total_loss/avg: 0.6497, train/hateful_memes/cross_entropy: 0.6497, train/hateful_memes/cross_entropy/avg: 0.6497, max mem: 6587.0, experiment: run, epoch: 1, num_updates: 100, iterations: 100, max_updates: 22000, lr: 0., ups: 1.12, time: 01m 29s 333ms, time_since_start: 01m 38s 418ms, eta: 05h 26m 23s 574ms
+2020-06-10T09:31:21 INFO: progress: 200/22000, train/total_loss: 0.5735, train/total_loss/avg: 0.6116, train/hateful_memes/cross_entropy: 0.5735, train/hateful_memes/cross_entropy/avg: 0.6116, max mem: 6587.0, experiment: run, epoch: 1, num_updates: 200, iterations: 200, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 469ms, time_since_start: 03m 06s 888ms, eta: 05h 21m 45s 746ms
+2020-06-10T09:32:49 INFO: progress: 300/22000, train/total_loss: 0.6497, train/total_loss/avg: 0.6698, train/hateful_memes/cross_entropy: 0.6497, train/hateful_memes/cross_entropy/avg: 0.6698, max mem: 6587.0, experiment: run, epoch: 1, num_updates: 300, iterations: 300, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 547ms, time_since_start: 04m 35s 435ms, eta: 05h 20m 33s 954ms
+2020-06-10T09:34:18 INFO: progress: 400/22000, train/total_loss: 0.6315, train/total_loss/avg: 0.6602, train/hateful_memes/cross_entropy: 0.6315, train/hateful_memes/cross_entropy/avg: 0.6602, max mem: 6587.0, experiment: run, epoch: 1, num_updates: 400, iterations: 400, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 309ms, time_since_start: 06m 03s 745ms, eta: 05h 18m 13s 885ms
+2020-06-10T09:35:46 INFO: progress: 500/22000, train/total_loss: 0.6349, train/total_loss/avg: 0.6552, train/hateful_memes/cross_entropy: 0.6349, train/hateful_memes/cross_entropy/avg: 0.6552, max mem: 6587.0, experiment: run, epoch: 1, num_updates: 500, iterations: 500, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 129ms, time_since_start: 07m 31s 874ms, eta: 05h 16m 06s 765ms
+2020-06-10T09:37:14 INFO: progress: 600/22000, train/total_loss: 0.6315, train/total_loss/avg: 0.6498, train/hateful_memes/cross_entropy: 0.6315, train/hateful_memes/cross_entropy/avg: 0.6498, max mem: 6587.0, experiment: run, epoch: 2, num_updates: 600, iterations: 600, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 849ms, time_since_start: 08m 59s 724ms, eta: 05h 13m 38s 660ms
+2020-06-10T09:38:42 INFO: progress: 700/22000, train/total_loss: 0.6315, train/total_loss/avg: 0.6408, train/hateful_memes/cross_entropy: 0.6315, train/hateful_memes/cross_entropy/avg: 0.6408, max mem: 6587.0, experiment: run, epoch: 2, num_updates: 700, iterations: 700, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 203ms, time_since_start: 10m 27s 928ms, eta: 05h 13m 26s 227ms
+2020-06-10T09:40:10 INFO: progress: 800/22000, train/total_loss: 0.6315, train/total_loss/avg: 0.6431, train/hateful_memes/cross_entropy: 0.6315, train/hateful_memes/cross_entropy/avg: 0.6431, max mem: 6587.0, experiment: run, epoch: 2, num_updates: 800, iterations: 800, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 182ms, time_since_start: 11m 56s 111ms, eta: 05h 11m 53s 477ms
+2020-06-10T09:41:38 INFO: progress: 900/22000, train/total_loss: 0.6315, train/total_loss/avg: 0.6383, train/hateful_memes/cross_entropy: 0.6315, train/hateful_memes/cross_entropy/avg: 0.6383, max mem: 6587.0, experiment: run, epoch: 2, num_updates: 900, iterations: 900, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 243ms, time_since_start: 13m 24s 354ms, eta: 05h 10m 37s 929ms
+2020-06-10T09:43:06 INFO: progress: 1000/22000, train/total_loss: 0.6315, train/total_loss/avg: 0.6473, train/hateful_memes/cross_entropy: 0.6315, train/hateful_memes/cross_entropy/avg: 0.6473, max mem: 6587.0, experiment: run, epoch: 2, num_updates: 1000, iterations: 1000, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 246ms, time_since_start: 14m 52s 601ms, eta: 05h 09m 10s 347ms
+2020-06-10T09:43:06 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T09:43:10 INFO: Evaluation time. Running on full validation set...
+2020-06-10T09:44:03 INFO: progress: 1000/22000, val/total_loss: 0.7712, val/hateful_memes/cross_entropy: 0.7712, val/hateful_memes/accuracy: 0.5440, val/hateful_memes/binary_f1: 0.2875, val/hateful_memes/roc_auc: 0.6259, num_updates: 1000, epoch: 2, iterations: 1000, max_updates: 22000, val_time: 28s 566ms, best_update: 1000, best_iteration: 1000, best_val/hateful_memes/roc_auc: 0.625920
+2020-06-10T09:44:04 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T09:45:32 INFO: progress: 1100/22000, train/total_loss: 0.6349, train/total_loss/avg: 0.6644, train/hateful_memes/cross_entropy: 0.6349, train/hateful_memes/cross_entropy/avg: 0.6644, max mem: 6589.0, experiment: run, epoch: 3, num_updates: 1100, iterations: 1100, max_updates: 22000, lr: 0.00003, ups: 1.12, time: 01m 29s 003ms, time_since_start: 17m 18s 463ms, eta: 05h 10m 20s 406ms
+2020-06-10T09:47:01 INFO: progress: 1200/22000, train/total_loss: 0.6315, train/total_loss/avg: 0.6503, train/hateful_memes/cross_entropy: 0.6315, train/hateful_memes/cross_entropy/avg: 0.6503, max mem: 6589.0, experiment: run, epoch: 3, num_updates: 1200, iterations: 1200, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 669ms, time_since_start: 18m 47s 133ms, eta: 05h 07m 41s 716ms
+2020-06-10T09:48:30 INFO: progress: 1300/22000, train/total_loss: 0.6315, train/total_loss/avg: 0.6396, train/hateful_memes/cross_entropy: 0.6315, train/hateful_memes/cross_entropy/avg: 0.6396, max mem: 6589.0, experiment: run, epoch: 3, num_updates: 1300, iterations: 1300, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 785ms, time_since_start: 20m 15s 918ms, eta: 05h 06m 36s 899ms
+2020-06-10T09:49:58 INFO: progress: 1400/22000, train/total_loss: 0.6228, train/total_loss/avg: 0.6179, train/hateful_memes/cross_entropy: 0.6228, train/hateful_memes/cross_entropy/avg: 0.6179, max mem: 6589.0, experiment: run, epoch: 3, num_updates: 1400, iterations: 1400, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 508ms, time_since_start: 21m 44s 427ms, eta: 05h 04m 11s 053ms
+2020-06-10T09:51:27 INFO: progress: 1500/22000, train/total_loss: 0.6228, train/total_loss/avg: 0.6087, train/hateful_memes/cross_entropy: 0.6228, train/hateful_memes/cross_entropy/avg: 0.6087, max mem: 6589.0, experiment: run, epoch: 3, num_updates: 1500, iterations: 1500, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 265ms, time_since_start: 23m 12s 693ms, eta: 05h 01m 52s 609ms
+2020-06-10T09:52:55 INFO: progress: 1600/22000, train/total_loss: 0.5998, train/total_loss/avg: 0.5925, train/hateful_memes/cross_entropy: 0.5998, train/hateful_memes/cross_entropy/avg: 0.5925, max mem: 6589.0, experiment: run, epoch: 4, num_updates: 1600, iterations: 1600, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 055ms, time_since_start: 24m 40s 748ms, eta: 04h 59m 41s 322ms
+2020-06-10T09:54:23 INFO: progress: 1700/22000, train/total_loss: 0.5998, train/total_loss/avg: 0.5678, train/hateful_memes/cross_entropy: 0.5998, train/hateful_memes/cross_entropy/avg: 0.5678, max mem: 6589.0, experiment: run, epoch: 4, num_updates: 1700, iterations: 1700, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 098ms, time_since_start: 26m 08s 847ms, eta: 04h 58m 21s 890ms
+2020-06-10T09:55:51 INFO: progress: 1800/22000, train/total_loss: 0.5870, train/total_loss/avg: 0.5644, train/hateful_memes/cross_entropy: 0.5870, train/hateful_memes/cross_entropy/avg: 0.5644, max mem: 6589.0, experiment: run, epoch: 4, num_updates: 1800, iterations: 1800, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 485ms, time_since_start: 27m 37s 333ms, eta: 04h 58m 12s 029ms
+2020-06-10T09:57:20 INFO: progress: 1900/22000, train/total_loss: 0.5870, train/total_loss/avg: 0.5552, train/hateful_memes/cross_entropy: 0.5870, train/hateful_memes/cross_entropy/avg: 0.5552, max mem: 6589.0, experiment: run, epoch: 4, num_updates: 1900, iterations: 1900, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 514ms, time_since_start: 29m 05s 848ms, eta: 04h 56m 49s 267ms
+2020-06-10T09:58:48 INFO: progress: 2000/22000, train/total_loss: 0.5735, train/total_loss/avg: 0.5496, train/hateful_memes/cross_entropy: 0.5735, train/hateful_memes/cross_entropy/avg: 0.5496, max mem: 6589.0, experiment: run, epoch: 4, num_updates: 2000, iterations: 2000, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 323ms, time_since_start: 30m 34s 171ms, eta: 04h 54m 42s 279ms
+2020-06-10T09:58:48 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T09:59:02 INFO: Evaluation time. Running on full validation set...
+2020-06-10T09:59:43 INFO: progress: 2000/22000, val/total_loss: 0.8877, val/hateful_memes/cross_entropy: 0.8877, val/hateful_memes/accuracy: 0.5540, val/hateful_memes/binary_f1: 0.2736, val/hateful_memes/roc_auc: 0.6290, num_updates: 2000, epoch: 4, iterations: 2000, max_updates: 22000, val_time: 08s 971ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T09:59:45 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T10:01:12 INFO: progress: 2100/22000, train/total_loss: 0.5105, train/total_loss/avg: 0.5405, train/hateful_memes/cross_entropy: 0.5105, train/hateful_memes/cross_entropy/avg: 0.5405, max mem: 6589.0, experiment: run, epoch: 4, num_updates: 2100, iterations: 2100, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 472ms, time_since_start: 32m 58s 320ms, eta: 04h 53m 43s 553ms
+2020-06-10T10:02:40 INFO: progress: 2200/22000, train/total_loss: 0.5105, train/total_loss/avg: 0.5470, train/hateful_memes/cross_entropy: 0.5105, train/hateful_memes/cross_entropy/avg: 0.5470, max mem: 6589.0, experiment: run, epoch: 5, num_updates: 2200, iterations: 2200, max_updates: 22000, lr: 0.00005, ups: 1.15, time: 01m 27s 937ms, time_since_start: 34m 26s 258ms, eta: 04h 50m 29s 113ms
+2020-06-10T10:04:08 INFO: progress: 2300/22000, train/total_loss: 0.5105, train/total_loss/avg: 0.5480, train/hateful_memes/cross_entropy: 0.5105, train/hateful_memes/cross_entropy/avg: 0.5480, max mem: 6589.0, experiment: run, epoch: 5, num_updates: 2300, iterations: 2300, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 250ms, time_since_start: 35m 54s 509ms, eta: 04h 50m 02s 771ms
+2020-06-10T10:05:36 INFO: progress: 2400/22000, train/total_loss: 0.5062, train/total_loss/avg: 0.5396, train/hateful_memes/cross_entropy: 0.5062, train/hateful_memes/cross_entropy/avg: 0.5396, max mem: 6589.0, experiment: run, epoch: 5, num_updates: 2400, iterations: 2400, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 102ms, time_since_start: 37m 22s 611ms, eta: 04h 48m 05s 337ms
+2020-06-10T10:07:04 INFO: progress: 2500/22000, train/total_loss: 0.4953, train/total_loss/avg: 0.5306, train/hateful_memes/cross_entropy: 0.4953, train/hateful_memes/cross_entropy/avg: 0.5306, max mem: 6589.0, experiment: run, epoch: 5, num_updates: 2500, iterations: 2500, max_updates: 22000, lr: 0.00005, ups: 1.15, time: 01m 27s 965ms, time_since_start: 38m 50s 577ms, eta: 04h 46m 10s 366ms
+2020-06-10T10:08:33 INFO: progress: 2600/22000, train/total_loss: 0.4804, train/total_loss/avg: 0.5193, train/hateful_memes/cross_entropy: 0.4804, train/hateful_memes/cross_entropy/avg: 0.5193, max mem: 6589.0, experiment: run, epoch: 5, num_updates: 2600, iterations: 2600, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 423ms, time_since_start: 40m 19s 000ms, eta: 04h 46m 11s 376ms
+2020-06-10T10:10:01 INFO: progress: 2700/22000, train/total_loss: 0.4438, train/total_loss/avg: 0.5138, train/hateful_memes/cross_entropy: 0.4438, train/hateful_memes/cross_entropy/avg: 0.5138, max mem: 6589.0, experiment: run, epoch: 6, num_updates: 2700, iterations: 2700, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 269ms, time_since_start: 41m 47s 270ms, eta: 04h 44m 12s 986ms
+2020-06-10T10:11:30 INFO: progress: 2800/22000, train/total_loss: 0.4363, train/total_loss/avg: 0.5110, train/hateful_memes/cross_entropy: 0.4363, train/hateful_memes/cross_entropy/avg: 0.5110, max mem: 6589.0, experiment: run, epoch: 6, num_updates: 2800, iterations: 2800, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 375ms, time_since_start: 43m 15s 645ms, eta: 04h 43m 04s 991ms
+2020-06-10T10:12:58 INFO: progress: 2900/22000, train/total_loss: 0.4363, train/total_loss/avg: 0.5167, train/hateful_memes/cross_entropy: 0.4363, train/hateful_memes/cross_entropy/avg: 0.5167, max mem: 6589.0, experiment: run, epoch: 6, num_updates: 2900, iterations: 2900, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 144ms, time_since_start: 44m 43s 789ms, eta: 04h 40m 52s 357ms
+2020-06-10T10:14:26 INFO: progress: 3000/22000, train/total_loss: 0.4363, train/total_loss/avg: 0.5205, train/hateful_memes/cross_entropy: 0.4363, train/hateful_memes/cross_entropy/avg: 0.5205, max mem: 6589.0, experiment: run, epoch: 6, num_updates: 3000, iterations: 3000, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 124ms, time_since_start: 46m 11s 913ms, eta: 04h 39m 20s 366ms
+2020-06-10T10:14:26 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T10:14:40 INFO: Evaluation time. Running on full validation set...
+2020-06-10T10:15:12 INFO: progress: 3000/22000, val/total_loss: 0.7276, val/hateful_memes/cross_entropy: 0.7276, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5172, num_updates: 3000, epoch: 6, iterations: 3000, max_updates: 22000, val_time: 08s 805ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T10:15:13 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T10:16:40 INFO: progress: 3100/22000, train/total_loss: 0.4363, train/total_loss/avg: 0.5291, train/hateful_memes/cross_entropy: 0.4363, train/hateful_memes/cross_entropy/avg: 0.5291, max mem: 6589.0, experiment: run, epoch: 6, num_updates: 3100, iterations: 3100, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 261ms, time_since_start: 48m 26s 508ms, eta: 04h 38m 18s 087ms
+2020-06-10T10:18:08 INFO: progress: 3200/22000, train/total_loss: 0.4363, train/total_loss/avg: 0.5321, train/hateful_memes/cross_entropy: 0.4363, train/hateful_memes/cross_entropy/avg: 0.5321, max mem: 6589.0, experiment: run, epoch: 7, num_updates: 3200, iterations: 3200, max_updates: 22000, lr: 0.00005, ups: 1.15, time: 01m 27s 820ms, time_since_start: 49m 54s 328ms, eta: 04h 35m 26s 739ms
+2020-06-10T10:19:36 INFO: progress: 3300/22000, train/total_loss: 0.4363, train/total_loss/avg: 0.5368, train/hateful_memes/cross_entropy: 0.4363, train/hateful_memes/cross_entropy/avg: 0.5368, max mem: 6589.0, experiment: run, epoch: 7, num_updates: 3300, iterations: 3300, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 197ms, time_since_start: 51m 22s 526ms, eta: 04h 35m 09s 457ms
+2020-06-10T10:21:05 INFO: progress: 3400/22000, train/total_loss: 0.4438, train/total_loss/avg: 0.5430, train/hateful_memes/cross_entropy: 0.4438, train/hateful_memes/cross_entropy/avg: 0.5430, max mem: 6589.0, experiment: run, epoch: 7, num_updates: 3400, iterations: 3400, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 173ms, time_since_start: 52m 50s 699ms, eta: 04h 33m 36s 630ms
+2020-06-10T10:22:33 INFO: progress: 3500/22000, train/total_loss: 0.4438, train/total_loss/avg: 0.5442, train/hateful_memes/cross_entropy: 0.4438, train/hateful_memes/cross_entropy/avg: 0.5442, max mem: 6589.0, experiment: run, epoch: 7, num_updates: 3500, iterations: 3500, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 365ms, time_since_start: 54m 19s 064ms, eta: 04h 32m 43s 928ms
+2020-06-10T10:24:01 INFO: progress: 3600/22000, train/total_loss: 0.5062, train/total_loss/avg: 0.5462, train/hateful_memes/cross_entropy: 0.5062, train/hateful_memes/cross_entropy/avg: 0.5462, max mem: 6589.0, experiment: run, epoch: 7, num_updates: 3600, iterations: 3600, max_updates: 22000, lr: 0.00005, ups: 1.14, time: 01m 28s 165ms, time_since_start: 55m 47s 229ms, eta: 04h 30m 38s 599ms
+2020-06-10T10:25:29 INFO: progress: 3700/22000, train/total_loss: 0.5309, train/total_loss/avg: 0.5458, train/hateful_memes/cross_entropy: 0.5309, train/hateful_memes/cross_entropy/avg: 0.5458, max mem: 6589.0, experiment: run, epoch: 7, num_updates: 3700, iterations: 3700, max_updates: 22000, lr: 0.00005, ups: 1.15, time: 01m 27s 887ms, time_since_start: 57m 15s 117ms, eta: 04h 28m 19s 500ms
+2020-06-10T10:26:57 INFO: progress: 3800/22000, train/total_loss: 0.5709, train/total_loss/avg: 0.5498, train/hateful_memes/cross_entropy: 0.5709, train/hateful_memes/cross_entropy/avg: 0.5498, max mem: 6589.0, experiment: run, epoch: 8, num_updates: 3800, iterations: 3800, max_updates: 22000, lr: 0.00005, ups: 1.15, time: 01m 27s 560ms, time_since_start: 58m 42s 677ms, eta: 04h 25m 51s 869ms
+2020-06-10T10:28:24 INFO: progress: 3900/22000, train/total_loss: 0.5854, train/total_loss/avg: 0.5538, train/hateful_memes/cross_entropy: 0.5854, train/hateful_memes/cross_entropy/avg: 0.5538, max mem: 6589.0, experiment: run, epoch: 8, num_updates: 3900, iterations: 3900, max_updates: 22000, lr: 0.00005, ups: 1.15, time: 01m 27s 774ms, time_since_start: 01h 10s 452ms, eta: 04h 25m 03s 129ms
+2020-06-10T10:29:52 INFO: progress: 4000/22000, train/total_loss: 0.6155, train/total_loss/avg: 0.5573, train/hateful_memes/cross_entropy: 0.6155, train/hateful_memes/cross_entropy/avg: 0.5573, max mem: 6589.0, experiment: run, epoch: 8, num_updates: 4000, iterations: 4000, max_updates: 22000, lr: 0.00005, ups: 1.15, time: 01m 27s 765ms, time_since_start: 01h 01m 38s 217ms, eta: 04h 23m 33s 570ms
+2020-06-10T10:29:52 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T10:30:06 INFO: Evaluation time. Running on full validation set...
+2020-06-10T10:30:38 INFO: progress: 4000/22000, val/total_loss: 0.7255, val/hateful_memes/cross_entropy: 0.7255, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5253, num_updates: 4000, epoch: 8, iterations: 4000, max_updates: 22000, val_time: 08s 755ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T10:30:40 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T10:32:07 INFO: progress: 4100/22000, train/total_loss: 0.6256, train/total_loss/avg: 0.5611, train/hateful_memes/cross_entropy: 0.6256, train/hateful_memes/cross_entropy/avg: 0.5611, max mem: 6589.0, experiment: run, epoch: 8, num_updates: 4100, iterations: 4100, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 067ms, time_since_start: 01h 03m 52s 846ms, eta: 04h 22m 59s 761ms
+2020-06-10T10:33:35 INFO: progress: 4200/22000, train/total_loss: 0.6256, train/total_loss/avg: 0.5658, train/hateful_memes/cross_entropy: 0.6256, train/hateful_memes/cross_entropy/avg: 0.5658, max mem: 6589.0, experiment: run, epoch: 8, num_updates: 4200, iterations: 4200, max_updates: 22000, lr: 0.00004, ups: 1.15, time: 01m 27s 836ms, time_since_start: 01h 05m 20s 683ms, eta: 04h 20m 50s 618ms
+2020-06-10T10:35:02 INFO: progress: 4300/22000, train/total_loss: 0.6256, train/total_loss/avg: 0.5662, train/hateful_memes/cross_entropy: 0.6256, train/hateful_memes/cross_entropy/avg: 0.5662, max mem: 6589.0, experiment: run, epoch: 9, num_updates: 4300, iterations: 4300, max_updates: 22000, lr: 0.00004, ups: 1.15, time: 01m 27s 728ms, time_since_start: 01h 06m 48s 411ms, eta: 04h 19m 03s 397ms
+2020-06-10T10:36:31 INFO: progress: 4400/22000, train/total_loss: 0.6289, train/total_loss/avg: 0.5712, train/hateful_memes/cross_entropy: 0.6289, train/hateful_memes/cross_entropy/avg: 0.5712, max mem: 6589.0, experiment: run, epoch: 9, num_updates: 4400, iterations: 4400, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 742ms, time_since_start: 01h 08m 17s 153ms, eta: 04h 20m 34s 219ms
+2020-06-10T10:38:00 INFO: progress: 4500/22000, train/total_loss: 0.6289, train/total_loss/avg: 0.5708, train/hateful_memes/cross_entropy: 0.6289, train/hateful_memes/cross_entropy/avg: 0.5708, max mem: 6589.0, experiment: run, epoch: 9, num_updates: 4500, iterations: 4500, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 814ms, time_since_start: 01h 09m 45s 967ms, eta: 04h 19m 18s 019ms
+2020-06-10T10:39:28 INFO: progress: 4600/22000, train/total_loss: 0.6552, train/total_loss/avg: 0.5727, train/hateful_memes/cross_entropy: 0.6552, train/hateful_memes/cross_entropy/avg: 0.5727, max mem: 6589.0, experiment: run, epoch: 9, num_updates: 4600, iterations: 4600, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 646ms, time_since_start: 01h 11m 14s 614ms, eta: 04h 17m 20s 003ms
+2020-06-10T10:40:57 INFO: progress: 4700/22000, train/total_loss: 0.6552, train/total_loss/avg: 0.5727, train/hateful_memes/cross_entropy: 0.6552, train/hateful_memes/cross_entropy/avg: 0.5727, max mem: 6589.0, experiment: run, epoch: 9, num_updates: 4700, iterations: 4700, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 762ms, time_since_start: 01h 12m 43s 377ms, eta: 04h 16m 11s 293ms
+2020-06-10T10:42:26 INFO: progress: 4800/22000, train/total_loss: 0.6552, train/total_loss/avg: 0.5737, train/hateful_memes/cross_entropy: 0.6552, train/hateful_memes/cross_entropy/avg: 0.5737, max mem: 6589.0, experiment: run, epoch: 10, num_updates: 4800, iterations: 4800, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 324ms, time_since_start: 01h 14m 11s 701ms, eta: 04h 13m 26s 935ms
+2020-06-10T10:43:54 INFO: progress: 4900/22000, train/total_loss: 0.6289, train/total_loss/avg: 0.5742, train/hateful_memes/cross_entropy: 0.6289, train/hateful_memes/cross_entropy/avg: 0.5742, max mem: 6589.0, experiment: run, epoch: 10, num_updates: 4900, iterations: 4900, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 217ms, time_since_start: 01h 15m 39s 918ms, eta: 04h 11m 40s 198ms
+2020-06-10T10:45:22 INFO: progress: 5000/22000, train/total_loss: 0.6256, train/total_loss/avg: 0.5742, train/hateful_memes/cross_entropy: 0.6256, train/hateful_memes/cross_entropy/avg: 0.5742, max mem: 6589.0, experiment: run, epoch: 10, num_updates: 5000, iterations: 5000, max_updates: 22000, lr: 0.00004, ups: 1.15, time: 01m 27s 965ms, time_since_start: 01h 17m 07s 883ms, eta: 04h 09m 29s 056ms
+2020-06-10T10:45:22 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T10:45:37 INFO: Evaluation time. Running on full validation set...
+2020-06-10T10:46:09 INFO: progress: 5000/22000, val/total_loss: 0.7741, val/hateful_memes/cross_entropy: 0.7741, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5295, num_updates: 5000, epoch: 10, iterations: 5000, max_updates: 22000, val_time: 10s 805ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T10:46:10 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T10:47:38 INFO: progress: 5100/22000, train/total_loss: 0.6256, train/total_loss/avg: 0.5759, train/hateful_memes/cross_entropy: 0.6256, train/hateful_memes/cross_entropy/avg: 0.5759, max mem: 6589.0, experiment: run, epoch: 10, num_updates: 5100, iterations: 5100, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 398ms, time_since_start: 01h 19m 23s 881ms, eta: 04h 09m 14s 346ms
+2020-06-10T10:49:06 INFO: progress: 5200/22000, train/total_loss: 0.6552, train/total_loss/avg: 0.5777, train/hateful_memes/cross_entropy: 0.6552, train/hateful_memes/cross_entropy/avg: 0.5777, max mem: 6589.0, experiment: run, epoch: 10, num_updates: 5200, iterations: 5200, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 030ms, time_since_start: 01h 20m 51s 911ms, eta: 04h 06m 43s 924ms
+2020-06-10T10:50:34 INFO: progress: 5300/22000, train/total_loss: 0.6552, train/total_loss/avg: 0.5808, train/hateful_memes/cross_entropy: 0.6552, train/hateful_memes/cross_entropy/avg: 0.5808, max mem: 6589.0, experiment: run, epoch: 10, num_updates: 5300, iterations: 5300, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 166ms, time_since_start: 01h 22m 20s 078ms, eta: 04h 05m 38s 491ms
+2020-06-10T10:52:02 INFO: progress: 5400/22000, train/total_loss: 0.6552, train/total_loss/avg: 0.5828, train/hateful_memes/cross_entropy: 0.6552, train/hateful_memes/cross_entropy/avg: 0.5828, max mem: 6589.0, experiment: run, epoch: 11, num_updates: 5400, iterations: 5400, max_updates: 22000, lr: 0.00004, ups: 1.15, time: 01m 27s 861ms, time_since_start: 01h 23m 47s 939ms, eta: 04h 03m 19s 589ms
+2020-06-10T10:53:30 INFO: progress: 5500/22000, train/total_loss: 0.6552, train/total_loss/avg: 0.5835, train/hateful_memes/cross_entropy: 0.6552, train/hateful_memes/cross_entropy/avg: 0.5835, max mem: 6589.0, experiment: run, epoch: 11, num_updates: 5500, iterations: 5500, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 174ms, time_since_start: 01h 25m 16s 114ms, eta: 04h 02m 43s 328ms
+2020-06-10T10:54:58 INFO: progress: 5600/22000, train/total_loss: 0.6637, train/total_loss/avg: 0.5855, train/hateful_memes/cross_entropy: 0.6637, train/hateful_memes/cross_entropy/avg: 0.5855, max mem: 6589.0, experiment: run, epoch: 11, num_updates: 5600, iterations: 5600, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 141ms, time_since_start: 01h 26m 44s 255ms, eta: 04h 01m 09s 698ms
+2020-06-10T10:56:26 INFO: progress: 5700/22000, train/total_loss: 0.6637, train/total_loss/avg: 0.5861, train/hateful_memes/cross_entropy: 0.6637, train/hateful_memes/cross_entropy/avg: 0.5861, max mem: 6589.0, experiment: run, epoch: 11, num_updates: 5700, iterations: 5700, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 031ms, time_since_start: 01h 28m 12s 287ms, eta: 03h 59m 23s 471ms
+2020-06-10T10:57:54 INFO: progress: 5800/22000, train/total_loss: 0.6637, train/total_loss/avg: 0.5890, train/hateful_memes/cross_entropy: 0.6637, train/hateful_memes/cross_entropy/avg: 0.5890, max mem: 6589.0, experiment: run, epoch: 11, num_updates: 5800, iterations: 5800, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 199ms, time_since_start: 01h 29m 40s 487ms, eta: 03h 58m 22s 657ms
+2020-06-10T10:59:22 INFO: progress: 5900/22000, train/total_loss: 0.6637, train/total_loss/avg: 0.5919, train/hateful_memes/cross_entropy: 0.6637, train/hateful_memes/cross_entropy/avg: 0.5919, max mem: 6589.0, experiment: run, epoch: 12, num_updates: 5900, iterations: 5900, max_updates: 22000, lr: 0.00004, ups: 1.15, time: 01m 27s 796ms, time_since_start: 01h 31m 08s 283ms, eta: 03h 55m 49s 412ms
+2020-06-10T11:00:50 INFO: progress: 6000/22000, train/total_loss: 0.6628, train/total_loss/avg: 0.5931, train/hateful_memes/cross_entropy: 0.6628, train/hateful_memes/cross_entropy/avg: 0.5931, max mem: 6589.0, experiment: run, epoch: 12, num_updates: 6000, iterations: 6000, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 042ms, time_since_start: 01h 32m 36s 326ms, eta: 03h 55m 892ms
+2020-06-10T11:00:50 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T11:01:03 INFO: Evaluation time. Running on full validation set...
+2020-06-10T11:01:35 INFO: progress: 6000/22000, val/total_loss: 0.7336, val/hateful_memes/cross_entropy: 0.7336, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5022, num_updates: 6000, epoch: 12, iterations: 6000, max_updates: 22000, val_time: 08s 754ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T11:01:36 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T11:03:04 INFO: progress: 6100/22000, train/total_loss: 0.6628, train/total_loss/avg: 0.5967, train/hateful_memes/cross_entropy: 0.6628, train/hateful_memes/cross_entropy/avg: 0.5967, max mem: 6589.0, experiment: run, epoch: 12, num_updates: 6100, iterations: 6100, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 405ms, time_since_start: 01h 34m 50s 073ms, eta: 03h 54m 30s 559ms
+2020-06-10T11:04:32 INFO: progress: 6200/22000, train/total_loss: 0.6628, train/total_loss/avg: 0.5985, train/hateful_memes/cross_entropy: 0.6628, train/hateful_memes/cross_entropy/avg: 0.5985, max mem: 6589.0, experiment: run, epoch: 12, num_updates: 6200, iterations: 6200, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 119ms, time_since_start: 01h 36m 18s 193ms, eta: 03h 52m 16s 837ms
+2020-06-10T11:06:00 INFO: progress: 6300/22000, train/total_loss: 0.6628, train/total_loss/avg: 0.5973, train/hateful_memes/cross_entropy: 0.6628, train/hateful_memes/cross_entropy/avg: 0.5973, max mem: 6589.0, experiment: run, epoch: 12, num_updates: 6300, iterations: 6300, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 153ms, time_since_start: 01h 37m 46s 347ms, eta: 03h 50m 54s 011ms
+2020-06-10T11:07:28 INFO: progress: 6400/22000, train/total_loss: 0.6628, train/total_loss/avg: 0.5988, train/hateful_memes/cross_entropy: 0.6628, train/hateful_memes/cross_entropy/avg: 0.5988, max mem: 6589.0, experiment: run, epoch: 13, num_updates: 6400, iterations: 6400, max_updates: 22000, lr: 0.00004, ups: 1.15, time: 01m 27s 915ms, time_since_start: 01h 39m 14s 262ms, eta: 03h 48m 48s 466ms
+2020-06-10T11:08:57 INFO: progress: 6500/22000, train/total_loss: 0.6628, train/total_loss/avg: 0.5997, train/hateful_memes/cross_entropy: 0.6628, train/hateful_memes/cross_entropy/avg: 0.5997, max mem: 6589.0, experiment: run, epoch: 13, num_updates: 6500, iterations: 6500, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 694ms, time_since_start: 01h 40m 42s 957ms, eta: 03h 49m 21s 472ms
+2020-06-10T11:10:25 INFO: progress: 6600/22000, train/total_loss: 0.6628, train/total_loss/avg: 0.6006, train/hateful_memes/cross_entropy: 0.6628, train/hateful_memes/cross_entropy/avg: 0.6006, max mem: 6589.0, experiment: run, epoch: 13, num_updates: 6600, iterations: 6600, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 568ms, time_since_start: 01h 42m 11s 526ms, eta: 03h 47m 33s 223ms
+2020-06-10T11:11:54 INFO: progress: 6700/22000, train/total_loss: 0.6637, train/total_loss/avg: 0.6020, train/hateful_memes/cross_entropy: 0.6637, train/hateful_memes/cross_entropy/avg: 0.6020, max mem: 6589.0, experiment: run, epoch: 13, num_updates: 6700, iterations: 6700, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 565ms, time_since_start: 01h 43m 40s 091ms, eta: 03h 46m 04s 108ms
+2020-06-10T11:13:22 INFO: progress: 6800/22000, train/total_loss: 0.6649, train/total_loss/avg: 0.6038, train/hateful_memes/cross_entropy: 0.6649, train/hateful_memes/cross_entropy/avg: 0.6038, max mem: 6589.0, experiment: run, epoch: 13, num_updates: 6800, iterations: 6800, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 476ms, time_since_start: 01h 45m 08s 567ms, eta: 03h 44m 21s 811ms
+2020-06-10T11:14:51 INFO: progress: 6900/22000, train/total_loss: 0.6903, train/total_loss/avg: 0.6054, train/hateful_memes/cross_entropy: 0.6903, train/hateful_memes/cross_entropy/avg: 0.6054, max mem: 6589.0, experiment: run, epoch: 13, num_updates: 6900, iterations: 6900, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 531ms, time_since_start: 01h 46m 37s 099ms, eta: 03h 43m 01s 579ms
+2020-06-10T11:16:19 INFO: progress: 7000/22000, train/total_loss: 0.6903, train/total_loss/avg: 0.6062, train/hateful_memes/cross_entropy: 0.6903, train/hateful_memes/cross_entropy/avg: 0.6062, max mem: 6589.0, experiment: run, epoch: 14, num_updates: 7000, iterations: 7000, max_updates: 22000, lr: 0.00004, ups: 1.15, time: 01m 27s 984ms, time_since_start: 01h 48m 05s 083ms, eta: 03h 40m 10s 857ms
+2020-06-10T11:16:19 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T11:16:32 INFO: Evaluation time. Running on full validation set...
+2020-06-10T11:16:41 INFO: progress: 7000/22000, val/total_loss: 0.7191, val/hateful_memes/cross_entropy: 0.7191, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5253, num_updates: 7000, epoch: 14, iterations: 7000, max_updates: 22000, val_time: 08s 753ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T11:16:42 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T11:18:10 INFO: progress: 7100/22000, train/total_loss: 0.6903, train/total_loss/avg: 0.6074, train/hateful_memes/cross_entropy: 0.6903, train/hateful_memes/cross_entropy/avg: 0.6074, max mem: 6589.0, experiment: run, epoch: 14, num_updates: 7100, iterations: 7100, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 766ms, time_since_start: 01h 49m 55s 855ms, eta: 03h 40m 39s 413ms
+2020-06-10T11:19:38 INFO: progress: 7200/22000, train/total_loss: 0.6903, train/total_loss/avg: 0.6076, train/hateful_memes/cross_entropy: 0.6903, train/hateful_memes/cross_entropy/avg: 0.6076, max mem: 6589.0, experiment: run, epoch: 14, num_updates: 7200, iterations: 7200, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 495ms, time_since_start: 01h 51m 24s 350ms, eta: 03h 38m 30s 413ms
+2020-06-10T11:21:07 INFO: progress: 7300/22000, train/total_loss: 0.6903, train/total_loss/avg: 0.6089, train/hateful_memes/cross_entropy: 0.6903, train/hateful_memes/cross_entropy/avg: 0.6089, max mem: 6589.0, experiment: run, epoch: 14, num_updates: 7300, iterations: 7300, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 510ms, time_since_start: 01h 52m 52s 861ms, eta: 03h 37m 04s 030ms
+2020-06-10T11:22:35 INFO: progress: 7400/22000, train/total_loss: 0.6904, train/total_loss/avg: 0.6105, train/hateful_memes/cross_entropy: 0.6904, train/hateful_memes/cross_entropy/avg: 0.6105, max mem: 6589.0, experiment: run, epoch: 14, num_updates: 7400, iterations: 7400, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 380ms, time_since_start: 01h 54m 21s 241ms, eta: 03h 35m 16s 401ms
+2020-06-10T11:24:03 INFO: progress: 7500/22000, train/total_loss: 0.6904, train/total_loss/avg: 0.6107, train/hateful_memes/cross_entropy: 0.6904, train/hateful_memes/cross_entropy/avg: 0.6107, max mem: 6589.0, experiment: run, epoch: 15, num_updates: 7500, iterations: 7500, max_updates: 22000, lr: 0.00004, ups: 1.15, time: 01m 27s 925ms, time_since_start: 01h 55m 49s 167ms, eta: 03h 32m 42s 012ms
+2020-06-10T11:25:31 INFO: progress: 7600/22000, train/total_loss: 0.6904, train/total_loss/avg: 0.6118, train/hateful_memes/cross_entropy: 0.6904, train/hateful_memes/cross_entropy/avg: 0.6118, max mem: 6589.0, experiment: run, epoch: 15, num_updates: 7600, iterations: 7600, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 284ms, time_since_start: 01h 57m 17s 451ms, eta: 03h 32m 05s 689ms
+2020-06-10T11:27:00 INFO: progress: 7700/22000, train/total_loss: 0.6904, train/total_loss/avg: 0.6121, train/hateful_memes/cross_entropy: 0.6904, train/hateful_memes/cross_entropy/avg: 0.6121, max mem: 6589.0, experiment: run, epoch: 15, num_updates: 7700, iterations: 7700, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 300ms, time_since_start: 01h 58m 45s 752ms, eta: 03h 30m 39s 620ms
+2020-06-10T11:28:28 INFO: progress: 7800/22000, train/total_loss: 0.6904, train/total_loss/avg: 0.6132, train/hateful_memes/cross_entropy: 0.6904, train/hateful_memes/cross_entropy/avg: 0.6132, max mem: 6589.0, experiment: run, epoch: 15, num_updates: 7800, iterations: 7800, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 339ms, time_since_start: 02h 14s 091ms, eta: 03h 29m 16s 741ms
+2020-06-10T11:29:56 INFO: progress: 7900/22000, train/total_loss: 0.6904, train/total_loss/avg: 0.6143, train/hateful_memes/cross_entropy: 0.6904, train/hateful_memes/cross_entropy/avg: 0.6143, max mem: 6589.0, experiment: run, epoch: 15, num_updates: 7900, iterations: 7900, max_updates: 22000, lr: 0.00004, ups: 1.14, time: 01m 28s 182ms, time_since_start: 02h 01m 42s 274ms, eta: 03h 27m 26s 136ms
+2020-06-10T11:31:24 INFO: progress: 8000/22000, train/total_loss: 0.6935, train/total_loss/avg: 0.6154, train/hateful_memes/cross_entropy: 0.6935, train/hateful_memes/cross_entropy/avg: 0.6154, max mem: 6589.0, experiment: run, epoch: 16, num_updates: 8000, iterations: 8000, max_updates: 22000, lr: 0.00004, ups: 1.15, time: 01m 27s 739ms, time_since_start: 02h 03m 10s 013ms, eta: 03h 24m 55s 786ms
+2020-06-10T11:31:24 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T11:31:37 INFO: Evaluation time. Running on full validation set...
+2020-06-10T11:31:46 INFO: progress: 8000/22000, val/total_loss: 0.7528, val/hateful_memes/cross_entropy: 0.7528, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5387, num_updates: 8000, epoch: 16, iterations: 8000, max_updates: 22000, val_time: 09s 079ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T11:31:48 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T11:33:15 INFO: progress: 8100/22000, train/total_loss: 0.6904, train/total_loss/avg: 0.6155, train/hateful_memes/cross_entropy: 0.6904, train/hateful_memes/cross_entropy/avg: 0.6155, max mem: 6589.0, experiment: run, epoch: 16, num_updates: 8100, iterations: 8100, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 399ms, time_since_start: 02h 05m 01s 191ms, eta: 03h 24m 59s 753ms
+2020-06-10T11:34:43 INFO: progress: 8200/22000, train/total_loss: 0.6892, train/total_loss/avg: 0.6156, train/hateful_memes/cross_entropy: 0.6892, train/hateful_memes/cross_entropy/avg: 0.6156, max mem: 6589.0, experiment: run, epoch: 16, num_updates: 8200, iterations: 8200, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 988ms, time_since_start: 02h 06m 29s 180ms, eta: 03h 22m 34s 569ms
+2020-06-10T11:36:11 INFO: progress: 8300/22000, train/total_loss: 0.6892, train/total_loss/avg: 0.6154, train/hateful_memes/cross_entropy: 0.6892, train/hateful_memes/cross_entropy/avg: 0.6154, max mem: 6589.0, experiment: run, epoch: 16, num_updates: 8300, iterations: 8300, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 901ms, time_since_start: 02h 07m 57s 081ms, eta: 03h 20m 54s 547ms
+2020-06-10T11:37:39 INFO: progress: 8400/22000, train/total_loss: 0.6892, train/total_loss/avg: 0.6164, train/hateful_memes/cross_entropy: 0.6892, train/hateful_memes/cross_entropy/avg: 0.6164, max mem: 6589.0, experiment: run, epoch: 16, num_updates: 8400, iterations: 8400, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 998ms, time_since_start: 02h 09m 25s 080ms, eta: 03h 19m 39s 760ms
+2020-06-10T11:39:07 INFO: progress: 8500/22000, train/total_loss: 0.6892, train/total_loss/avg: 0.6170, train/hateful_memes/cross_entropy: 0.6892, train/hateful_memes/cross_entropy/avg: 0.6170, max mem: 6589.0, experiment: run, epoch: 16, num_updates: 8500, iterations: 8500, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 896ms, time_since_start: 02h 10m 52s 977ms, eta: 03h 17m 57s 924ms
+2020-06-10T11:40:34 INFO: progress: 8600/22000, train/total_loss: 0.6892, train/total_loss/avg: 0.6170, train/hateful_memes/cross_entropy: 0.6892, train/hateful_memes/cross_entropy/avg: 0.6170, max mem: 6589.0, experiment: run, epoch: 17, num_updates: 8600, iterations: 8600, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 216ms, time_since_start: 02h 12m 20s 193ms, eta: 03h 14m 58s 657ms
+2020-06-10T11:42:01 INFO: progress: 8700/22000, train/total_loss: 0.6632, train/total_loss/avg: 0.6162, train/hateful_memes/cross_entropy: 0.6632, train/hateful_memes/cross_entropy/avg: 0.6162, max mem: 6589.0, experiment: run, epoch: 17, num_updates: 8700, iterations: 8700, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 409ms, time_since_start: 02h 13m 47s 603ms, eta: 03h 13m 57s 110ms
+2020-06-10T11:43:29 INFO: progress: 8800/22000, train/total_loss: 0.6609, train/total_loss/avg: 0.6159, train/hateful_memes/cross_entropy: 0.6609, train/hateful_memes/cross_entropy/avg: 0.6159, max mem: 6589.0, experiment: run, epoch: 17, num_updates: 8800, iterations: 8800, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 471ms, time_since_start: 02h 15m 15s 075ms, eta: 03h 12m 37s 843ms
+2020-06-10T11:44:56 INFO: progress: 8900/22000, train/total_loss: 0.6363, train/total_loss/avg: 0.6161, train/hateful_memes/cross_entropy: 0.6363, train/hateful_memes/cross_entropy/avg: 0.6161, max mem: 6589.0, experiment: run, epoch: 17, num_updates: 8900, iterations: 8900, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 496ms, time_since_start: 02h 16m 42s 571ms, eta: 03h 11m 13s 469ms
+2020-06-10T11:46:24 INFO: progress: 9000/22000, train/total_loss: 0.6277, train/total_loss/avg: 0.6161, train/hateful_memes/cross_entropy: 0.6277, train/hateful_memes/cross_entropy/avg: 0.6161, max mem: 6589.0, experiment: run, epoch: 17, num_updates: 9000, iterations: 9000, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 474ms, time_since_start: 02h 18m 10s 046ms, eta: 03h 09m 43s 101ms
+2020-06-10T11:46:24 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T11:46:38 INFO: Evaluation time. Running on full validation set...
+2020-06-10T11:46:47 INFO: progress: 9000/22000, val/total_loss: 0.7515, val/hateful_memes/cross_entropy: 0.7515, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5364, num_updates: 9000, epoch: 17, iterations: 9000, max_updates: 22000, val_time: 08s 723ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T11:46:48 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T11:48:15 INFO: progress: 9100/22000, train/total_loss: 0.6277, train/total_loss/avg: 0.6177, train/hateful_memes/cross_entropy: 0.6277, train/hateful_memes/cross_entropy/avg: 0.6177, max mem: 6589.0, experiment: run, epoch: 18, num_updates: 9100, iterations: 9100, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 576ms, time_since_start: 02h 20m 01s 119ms, eta: 03h 08m 28s 656ms
+2020-06-10T11:49:43 INFO: progress: 9200/22000, train/total_loss: 0.6363, train/total_loss/avg: 0.6185, train/hateful_memes/cross_entropy: 0.6363, train/hateful_memes/cross_entropy/avg: 0.6185, max mem: 6589.0, experiment: run, epoch: 18, num_updates: 9200, iterations: 9200, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 819ms, time_since_start: 02h 21m 28s 939ms, eta: 03h 07m 32s 094ms
+2020-06-10T11:51:10 INFO: progress: 9300/22000, train/total_loss: 0.6363, train/total_loss/avg: 0.6193, train/hateful_memes/cross_entropy: 0.6363, train/hateful_memes/cross_entropy/avg: 0.6193, max mem: 6589.0, experiment: run, epoch: 18, num_updates: 9300, iterations: 9300, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 687ms, time_since_start: 02h 22m 56s 626ms, eta: 03h 05m 47s 506ms
+2020-06-10T11:52:38 INFO: progress: 9400/22000, train/total_loss: 0.6363, train/total_loss/avg: 0.6210, train/hateful_memes/cross_entropy: 0.6363, train/hateful_memes/cross_entropy/avg: 0.6210, max mem: 6589.0, experiment: run, epoch: 18, num_updates: 9400, iterations: 9400, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 755ms, time_since_start: 02h 24m 24s 382ms, eta: 03h 04m 28s 303ms
+2020-06-10T11:54:06 INFO: progress: 9500/22000, train/total_loss: 0.6363, train/total_loss/avg: 0.6211, train/hateful_memes/cross_entropy: 0.6363, train/hateful_memes/cross_entropy/avg: 0.6211, max mem: 6589.0, experiment: run, epoch: 18, num_updates: 9500, iterations: 9500, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 690ms, time_since_start: 02h 25m 52s 073ms, eta: 03h 02m 52s 272ms
+2020-06-10T11:55:33 INFO: progress: 9600/22000, train/total_loss: 0.6363, train/total_loss/avg: 0.6215, train/hateful_memes/cross_entropy: 0.6363, train/hateful_memes/cross_entropy/avg: 0.6215, max mem: 6589.0, experiment: run, epoch: 19, num_updates: 9600, iterations: 9600, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 442ms, time_since_start: 02h 27m 19s 515ms, eta: 03h 53s 689ms
+2020-06-10T11:57:01 INFO: progress: 9700/22000, train/total_loss: 0.6609, train/total_loss/avg: 0.6237, train/hateful_memes/cross_entropy: 0.6609, train/hateful_memes/cross_entropy/avg: 0.6237, max mem: 6589.0, experiment: run, epoch: 19, num_updates: 9700, iterations: 9700, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 845ms, time_since_start: 02h 28m 47s 361ms, eta: 03h 15s 804ms
+2020-06-10T11:58:29 INFO: progress: 9800/22000, train/total_loss: 0.6277, train/total_loss/avg: 0.6230, train/hateful_memes/cross_entropy: 0.6277, train/hateful_memes/cross_entropy/avg: 0.6230, max mem: 6589.0, experiment: run, epoch: 19, num_updates: 9800, iterations: 9800, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 843ms, time_since_start: 02h 30m 15s 204ms, eta: 02h 58m 47s 602ms
+2020-06-10T11:59:57 INFO: progress: 9900/22000, train/total_loss: 0.6277, train/total_loss/avg: 0.6247, train/hateful_memes/cross_entropy: 0.6277, train/hateful_memes/cross_entropy/avg: 0.6247, max mem: 6589.0, experiment: run, epoch: 19, num_updates: 9900, iterations: 9900, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 776ms, time_since_start: 02h 31m 42s 981ms, eta: 02h 57m 11s 624ms
+2020-06-10T12:01:25 INFO: progress: 10000/22000, train/total_loss: 0.6277, train/total_loss/avg: 0.6251, train/hateful_memes/cross_entropy: 0.6277, train/hateful_memes/cross_entropy/avg: 0.6251, max mem: 6589.0, experiment: run, epoch: 19, num_updates: 10000, iterations: 10000, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 914ms, time_since_start: 02h 33m 10s 895ms, eta: 02h 56m 260ms
+2020-06-10T12:01:25 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T12:01:38 INFO: Evaluation time. Running on full validation set...
+2020-06-10T12:01:47 INFO: progress: 10000/22000, val/total_loss: 0.7415, val/hateful_memes/cross_entropy: 0.7415, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5336, num_updates: 10000, epoch: 19, iterations: 10000, max_updates: 22000, val_time: 08s 965ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T12:01:48 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T12:03:16 INFO: progress: 10100/22000, train/total_loss: 0.6333, train/total_loss/avg: 0.6251, train/hateful_memes/cross_entropy: 0.6333, train/hateful_memes/cross_entropy/avg: 0.6251, max mem: 6589.0, experiment: run, epoch: 19, num_updates: 10100, iterations: 10100, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 174ms, time_since_start: 02h 35m 01s 738ms, eta: 02h 55m 03s 293ms
+2020-06-10T12:04:44 INFO: progress: 10200/22000, train/total_loss: 0.6333, train/total_loss/avg: 0.6249, train/hateful_memes/cross_entropy: 0.6333, train/hateful_memes/cross_entropy/avg: 0.6249, max mem: 6589.0, experiment: run, epoch: 20, num_updates: 10200, iterations: 10200, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 054ms, time_since_start: 02h 36m 29s 793ms, eta: 02h 53m 20s 817ms
+2020-06-10T12:06:12 INFO: progress: 10300/22000, train/total_loss: 0.6333, train/total_loss/avg: 0.6246, train/hateful_memes/cross_entropy: 0.6333, train/hateful_memes/cross_entropy/avg: 0.6246, max mem: 6589.0, experiment: run, epoch: 20, num_updates: 10300, iterations: 10300, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 379ms, time_since_start: 02h 37m 58s 173ms, eta: 02h 52m 30s 775ms
+2020-06-10T12:07:40 INFO: progress: 10400/22000, train/total_loss: 0.6333, train/total_loss/avg: 0.6249, train/hateful_memes/cross_entropy: 0.6333, train/hateful_memes/cross_entropy/avg: 0.6249, max mem: 6589.0, experiment: run, epoch: 20, num_updates: 10400, iterations: 10400, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 182ms, time_since_start: 02h 39m 26s 355ms, eta: 02h 50m 39s 383ms
+2020-06-10T12:09:08 INFO: progress: 10500/22000, train/total_loss: 0.6277, train/total_loss/avg: 0.6246, train/hateful_memes/cross_entropy: 0.6277, train/hateful_memes/cross_entropy/avg: 0.6246, max mem: 6589.0, experiment: run, epoch: 20, num_updates: 10500, iterations: 10500, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 218ms, time_since_start: 02h 40m 54s 573ms, eta: 02h 49m 15s 250ms
+2020-06-10T12:10:37 INFO: progress: 10600/22000, train/total_loss: 0.6333, train/total_loss/avg: 0.6249, train/hateful_memes/cross_entropy: 0.6333, train/hateful_memes/cross_entropy/avg: 0.6249, max mem: 6589.0, experiment: run, epoch: 20, num_updates: 10600, iterations: 10600, max_updates: 22000, lr: 0.00003, ups: 1.14, time: 01m 28s 203ms, time_since_start: 02h 42m 22s 777ms, eta: 02h 47m 45s 277ms
+2020-06-10T12:12:04 INFO: progress: 10700/22000, train/total_loss: 0.6600, train/total_loss/avg: 0.6257, train/hateful_memes/cross_entropy: 0.6600, train/hateful_memes/cross_entropy/avg: 0.6257, max mem: 6589.0, experiment: run, epoch: 21, num_updates: 10700, iterations: 10700, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 534ms, time_since_start: 02h 43m 50s 312ms, eta: 02h 45m 01s 345ms
+2020-06-10T12:13:32 INFO: progress: 10800/22000, train/total_loss: 0.6600, train/total_loss/avg: 0.6253, train/hateful_memes/cross_entropy: 0.6600, train/hateful_memes/cross_entropy/avg: 0.6253, max mem: 6589.0, experiment: run, epoch: 21, num_updates: 10800, iterations: 10800, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 548ms, time_since_start: 02h 45m 17s 860ms, eta: 02h 43m 35s 224ms
+2020-06-10T12:14:59 INFO: progress: 10900/22000, train/total_loss: 0.6600, train/total_loss/avg: 0.6252, train/hateful_memes/cross_entropy: 0.6600, train/hateful_memes/cross_entropy/avg: 0.6252, max mem: 6589.0, experiment: run, epoch: 21, num_updates: 10900, iterations: 10900, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 545ms, time_since_start: 02h 46m 45s 406ms, eta: 02h 42m 07s 254ms
+2020-06-10T12:16:27 INFO: progress: 11000/22000, train/total_loss: 0.6618, train/total_loss/avg: 0.6256, train/hateful_memes/cross_entropy: 0.6618, train/hateful_memes/cross_entropy/avg: 0.6256, max mem: 6589.0, experiment: run, epoch: 21, num_updates: 11000, iterations: 11000, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 496ms, time_since_start: 02h 48m 12s 902ms, eta: 02h 40m 34s 208ms
+2020-06-10T12:16:27 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T12:16:40 INFO: Evaluation time. Running on full validation set...
+2020-06-10T12:16:48 INFO: progress: 11000/22000, val/total_loss: 0.7289, val/hateful_memes/cross_entropy: 0.7289, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4762, num_updates: 11000, epoch: 21, iterations: 11000, max_updates: 22000, val_time: 08s 681ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T12:16:50 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T12:18:17 INFO: progress: 11100/22000, train/total_loss: 0.6618, train/total_loss/avg: 0.6262, train/hateful_memes/cross_entropy: 0.6618, train/hateful_memes/cross_entropy/avg: 0.6262, max mem: 6589.0, experiment: run, epoch: 21, num_updates: 11100, iterations: 11100, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 922ms, time_since_start: 02h 50m 02s 699ms, eta: 02h 39m 53s 117ms
+2020-06-10T12:19:44 INFO: progress: 11200/22000, train/total_loss: 0.6618, train/total_loss/avg: 0.6269, train/hateful_memes/cross_entropy: 0.6618, train/hateful_memes/cross_entropy/avg: 0.6269, max mem: 6589.0, experiment: run, epoch: 22, num_updates: 11200, iterations: 11200, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 395ms, time_since_start: 02h 51m 30s 095ms, eta: 02h 37m 28s 198ms
+2020-06-10T12:21:12 INFO: progress: 11300/22000, train/total_loss: 0.6600, train/total_loss/avg: 0.6269, train/hateful_memes/cross_entropy: 0.6600, train/hateful_memes/cross_entropy/avg: 0.6269, max mem: 6589.0, experiment: run, epoch: 22, num_updates: 11300, iterations: 11300, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 757ms, time_since_start: 02h 52m 57s 852ms, eta: 02h 36m 39s 397ms
+2020-06-10T12:22:39 INFO: progress: 11400/22000, train/total_loss: 0.6600, train/total_loss/avg: 0.6273, train/hateful_memes/cross_entropy: 0.6600, train/hateful_memes/cross_entropy/avg: 0.6273, max mem: 6589.0, experiment: run, epoch: 22, num_updates: 11400, iterations: 11400, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 738ms, time_since_start: 02h 54m 25s 591ms, eta: 02h 35m 09s 588ms
+2020-06-10T12:24:07 INFO: progress: 11500/22000, train/total_loss: 0.6618, train/total_loss/avg: 0.6282, train/hateful_memes/cross_entropy: 0.6618, train/hateful_memes/cross_entropy/avg: 0.6282, max mem: 6589.0, experiment: run, epoch: 22, num_updates: 11500, iterations: 11500, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 807ms, time_since_start: 02h 55m 53s 398ms, eta: 02h 33m 49s 027ms
+2020-06-10T12:25:35 INFO: progress: 11600/22000, train/total_loss: 0.6618, train/total_loss/avg: 0.6288, train/hateful_memes/cross_entropy: 0.6618, train/hateful_memes/cross_entropy/avg: 0.6288, max mem: 6589.0, experiment: run, epoch: 22, num_updates: 11600, iterations: 11600, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 719ms, time_since_start: 02h 57m 21s 118ms, eta: 02h 32m 11s 987ms
+2020-06-10T12:27:03 INFO: progress: 11700/22000, train/total_loss: 0.6605, train/total_loss/avg: 0.6291, train/hateful_memes/cross_entropy: 0.6605, train/hateful_memes/cross_entropy/avg: 0.6291, max mem: 6589.0, experiment: run, epoch: 22, num_updates: 11700, iterations: 11700, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 687ms, time_since_start: 02h 58m 48s 806ms, eta: 02h 30m 40s 819ms
+2020-06-10T12:28:30 INFO: progress: 11800/22000, train/total_loss: 0.6605, train/total_loss/avg: 0.6291, train/hateful_memes/cross_entropy: 0.6605, train/hateful_memes/cross_entropy/avg: 0.6291, max mem: 6589.0, experiment: run, epoch: 23, num_updates: 11800, iterations: 11800, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 108ms, time_since_start: 03h 15s 914ms, eta: 02h 28m 13s 933ms
+2020-06-10T12:29:57 INFO: progress: 11900/22000, train/total_loss: 0.6605, train/total_loss/avg: 0.6293, train/hateful_memes/cross_entropy: 0.6605, train/hateful_memes/cross_entropy/avg: 0.6293, max mem: 6589.0, experiment: run, epoch: 23, num_updates: 11900, iterations: 11900, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 201ms, time_since_start: 03h 01m 43s 116ms, eta: 02h 26m 56s 194ms
+2020-06-10T12:31:24 INFO: progress: 12000/22000, train/total_loss: 0.6605, train/total_loss/avg: 0.6299, train/hateful_memes/cross_entropy: 0.6605, train/hateful_memes/cross_entropy/avg: 0.6299, max mem: 6589.0, experiment: run, epoch: 23, num_updates: 12000, iterations: 12000, max_updates: 22000, lr: 0.00003, ups: 1.15, time: 01m 27s 218ms, time_since_start: 03h 03m 10s 335ms, eta: 02h 25m 30s 621ms
+2020-06-10T12:31:24 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T12:31:38 INFO: Evaluation time. Running on full validation set...
+2020-06-10T12:31:47 INFO: progress: 12000/22000, val/total_loss: 0.7305, val/hateful_memes/cross_entropy: 0.7305, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4738, num_updates: 12000, epoch: 23, iterations: 12000, max_updates: 22000, val_time: 08s 709ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T12:31:48 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T12:33:14 INFO: progress: 12100/22000, train/total_loss: 0.6605, train/total_loss/avg: 0.6299, train/hateful_memes/cross_entropy: 0.6605, train/hateful_memes/cross_entropy/avg: 0.6299, max mem: 6589.0, experiment: run, epoch: 23, num_updates: 12100, iterations: 12100, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 495ms, time_since_start: 03h 05m 591ms, eta: 02h 24m 30s 743ms
+2020-06-10T12:34:42 INFO: progress: 12200/22000, train/total_loss: 0.6608, train/total_loss/avg: 0.6307, train/hateful_memes/cross_entropy: 0.6608, train/hateful_memes/cross_entropy/avg: 0.6307, max mem: 6589.0, experiment: run, epoch: 23, num_updates: 12200, iterations: 12200, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 229ms, time_since_start: 03h 06m 27s 820ms, eta: 02h 22m 37s 005ms
+2020-06-10T12:36:09 INFO: progress: 12300/22000, train/total_loss: 0.6618, train/total_loss/avg: 0.6313, train/hateful_memes/cross_entropy: 0.6618, train/hateful_memes/cross_entropy/avg: 0.6313, max mem: 6589.0, experiment: run, epoch: 24, num_updates: 12300, iterations: 12300, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 241ms, time_since_start: 03h 07m 55s 062ms, eta: 02h 21m 10s 905ms
+2020-06-10T12:37:36 INFO: progress: 12400/22000, train/total_loss: 0.6642, train/total_loss/avg: 0.6318, train/hateful_memes/cross_entropy: 0.6642, train/hateful_memes/cross_entropy/avg: 0.6318, max mem: 6589.0, experiment: run, epoch: 24, num_updates: 12400, iterations: 12400, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 319ms, time_since_start: 03h 09m 22s 382ms, eta: 02h 19m 51s 095ms
+2020-06-10T12:39:04 INFO: progress: 12500/22000, train/total_loss: 0.6642, train/total_loss/avg: 0.6314, train/hateful_memes/cross_entropy: 0.6642, train/hateful_memes/cross_entropy/avg: 0.6314, max mem: 6589.0, experiment: run, epoch: 24, num_updates: 12500, iterations: 12500, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 295ms, time_since_start: 03h 10m 49s 678ms, eta: 02h 18m 21s 372ms
+2020-06-10T12:40:31 INFO: progress: 12600/22000, train/total_loss: 0.6618, train/total_loss/avg: 0.6308, train/hateful_memes/cross_entropy: 0.6618, train/hateful_memes/cross_entropy/avg: 0.6308, max mem: 6589.0, experiment: run, epoch: 24, num_updates: 12600, iterations: 12600, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 360ms, time_since_start: 03h 12m 17s 038ms, eta: 02h 17m 056ms
+2020-06-10T12:41:58 INFO: progress: 12700/22000, train/total_loss: 0.6608, train/total_loss/avg: 0.6305, train/hateful_memes/cross_entropy: 0.6608, train/hateful_memes/cross_entropy/avg: 0.6305, max mem: 6589.0, experiment: run, epoch: 24, num_updates: 12700, iterations: 12700, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 507ms, time_since_start: 03h 13m 44s 545ms, eta: 02h 15m 46s 298ms
+2020-06-10T12:43:26 INFO: progress: 12800/22000, train/total_loss: 0.6608, train/total_loss/avg: 0.6305, train/hateful_memes/cross_entropy: 0.6608, train/hateful_memes/cross_entropy/avg: 0.6305, max mem: 6589.0, experiment: run, epoch: 25, num_updates: 12800, iterations: 12800, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 443ms, time_since_start: 03h 15m 11s 988ms, eta: 02h 14m 12s 830ms
+2020-06-10T12:44:54 INFO: progress: 12900/22000, train/total_loss: 0.6615, train/total_loss/avg: 0.6307, train/hateful_memes/cross_entropy: 0.6615, train/hateful_memes/cross_entropy/avg: 0.6307, max mem: 6589.0, experiment: run, epoch: 25, num_updates: 12900, iterations: 12900, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 108ms, time_since_start: 03h 16m 40s 097ms, eta: 02h 13m 45s 888ms
+2020-06-10T12:46:22 INFO: progress: 13000/22000, train/total_loss: 0.6615, train/total_loss/avg: 0.6315, train/hateful_memes/cross_entropy: 0.6615, train/hateful_memes/cross_entropy/avg: 0.6315, max mem: 6589.0, experiment: run, epoch: 25, num_updates: 13000, iterations: 13000, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 145ms, time_since_start: 03h 18m 08s 242ms, eta: 02h 12m 21s 057ms
+2020-06-10T12:46:22 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T12:46:36 INFO: Evaluation time. Running on full validation set...
+2020-06-10T12:46:45 INFO: progress: 13000/22000, val/total_loss: 0.7350, val/hateful_memes/cross_entropy: 0.7350, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4707, num_updates: 13000, epoch: 25, iterations: 13000, max_updates: 22000, val_time: 08s 661ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T12:46:46 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T12:48:13 INFO: progress: 13100/22000, train/total_loss: 0.6608, train/total_loss/avg: 0.6311, train/hateful_memes/cross_entropy: 0.6608, train/hateful_memes/cross_entropy/avg: 0.6311, max mem: 6589.0, experiment: run, epoch: 25, num_updates: 13100, iterations: 13100, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 246ms, time_since_start: 03h 19m 59s 566ms, eta: 02h 11m 01s 796ms
+2020-06-10T12:49:41 INFO: progress: 13200/22000, train/total_loss: 0.6605, train/total_loss/avg: 0.6304, train/hateful_memes/cross_entropy: 0.6605, train/hateful_memes/cross_entropy/avg: 0.6304, max mem: 6589.0, experiment: run, epoch: 25, num_updates: 13200, iterations: 13200, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 026ms, time_since_start: 03h 21m 27s 593ms, eta: 02h 09m 14s 092ms
+2020-06-10T12:51:09 INFO: progress: 13300/22000, train/total_loss: 0.6608, train/total_loss/avg: 0.6306, train/hateful_memes/cross_entropy: 0.6608, train/hateful_memes/cross_entropy/avg: 0.6306, max mem: 6589.0, experiment: run, epoch: 25, num_updates: 13300, iterations: 13300, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 400ms, time_since_start: 03h 22m 54s 994ms, eta: 02h 06m 51s 497ms
+2020-06-10T12:52:37 INFO: progress: 13400/22000, train/total_loss: 0.6605, train/total_loss/avg: 0.6308, train/hateful_memes/cross_entropy: 0.6605, train/hateful_memes/cross_entropy/avg: 0.6308, max mem: 6589.0, experiment: run, epoch: 26, num_updates: 13400, iterations: 13400, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 262ms, time_since_start: 03h 24m 23s 257ms, eta: 02h 06m 38s 179ms
+2020-06-10T12:54:05 INFO: progress: 13500/22000, train/total_loss: 0.6605, train/total_loss/avg: 0.6313, train/hateful_memes/cross_entropy: 0.6605, train/hateful_memes/cross_entropy/avg: 0.6313, max mem: 6589.0, experiment: run, epoch: 26, num_updates: 13500, iterations: 13500, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 694ms, time_since_start: 03h 25m 50s 952ms, eta: 02h 04m 21s 524ms
+2020-06-10T12:55:33 INFO: progress: 13600/22000, train/total_loss: 0.6605, train/total_loss/avg: 0.6315, train/hateful_memes/cross_entropy: 0.6605, train/hateful_memes/cross_entropy/avg: 0.6315, max mem: 6589.0, experiment: run, epoch: 26, num_updates: 13600, iterations: 13600, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 689ms, time_since_start: 03h 27m 18s 641ms, eta: 02h 02m 53s 300ms
+2020-06-10T12:57:00 INFO: progress: 13700/22000, train/total_loss: 0.6603, train/total_loss/avg: 0.6315, train/hateful_memes/cross_entropy: 0.6603, train/hateful_memes/cross_entropy/avg: 0.6315, max mem: 6589.0, experiment: run, epoch: 26, num_updates: 13700, iterations: 13700, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 794ms, time_since_start: 03h 28m 46s 436ms, eta: 02h 01m 34s 263ms
+2020-06-10T12:58:28 INFO: progress: 13800/22000, train/total_loss: 0.6608, train/total_loss/avg: 0.6322, train/hateful_memes/cross_entropy: 0.6608, train/hateful_memes/cross_entropy/avg: 0.6322, max mem: 6589.0, experiment: run, epoch: 26, num_updates: 13800, iterations: 13800, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 724ms, time_since_start: 03h 30m 14s 161ms, eta: 02h 603ms
+2020-06-10T12:59:56 INFO: progress: 13900/22000, train/total_loss: 0.6603, train/total_loss/avg: 0.6322, train/hateful_memes/cross_entropy: 0.6603, train/hateful_memes/cross_entropy/avg: 0.6322, max mem: 6589.0, experiment: run, epoch: 27, num_updates: 13900, iterations: 13900, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 886ms, time_since_start: 03h 31m 42s 048ms, eta: 01h 58m 45s 964ms
+2020-06-10T13:01:24 INFO: progress: 14000/22000, train/total_loss: 0.6603, train/total_loss/avg: 0.6324, train/hateful_memes/cross_entropy: 0.6603, train/hateful_memes/cross_entropy/avg: 0.6324, max mem: 6589.0, experiment: run, epoch: 27, num_updates: 14000, iterations: 14000, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 197ms, time_since_start: 03h 33m 10s 245ms, eta: 01h 57m 42s 856ms
+2020-06-10T13:01:24 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T13:01:38 INFO: Evaluation time. Running on full validation set...
+2020-06-10T13:01:47 INFO: progress: 14000/22000, val/total_loss: 0.7418, val/hateful_memes/cross_entropy: 0.7418, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4777, num_updates: 14000, epoch: 27, iterations: 14000, max_updates: 22000, val_time: 08s 989ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T13:01:48 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T13:03:15 INFO: progress: 14100/22000, train/total_loss: 0.6615, train/total_loss/avg: 0.6329, train/hateful_memes/cross_entropy: 0.6615, train/hateful_memes/cross_entropy/avg: 0.6329, max mem: 6589.0, experiment: run, epoch: 27, num_updates: 14100, iterations: 14100, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 554ms, time_since_start: 03h 35m 01s 620ms, eta: 01h 56m 42s 773ms
+2020-06-10T13:04:44 INFO: progress: 14200/22000, train/total_loss: 0.6603, train/total_loss/avg: 0.6326, train/hateful_memes/cross_entropy: 0.6603, train/hateful_memes/cross_entropy/avg: 0.6326, max mem: 6589.0, experiment: run, epoch: 27, num_updates: 14200, iterations: 14200, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 276ms, time_since_start: 03h 36m 29s 897ms, eta: 01h 54m 52s 478ms
+2020-06-10T13:06:12 INFO: progress: 14300/22000, train/total_loss: 0.6603, train/total_loss/avg: 0.6328, train/hateful_memes/cross_entropy: 0.6603, train/hateful_memes/cross_entropy/avg: 0.6328, max mem: 6589.0, experiment: run, epoch: 27, num_updates: 14300, iterations: 14300, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 233ms, time_since_start: 03h 37m 58s 130ms, eta: 01h 53m 20s 738ms
+2020-06-10T13:07:40 INFO: progress: 14400/22000, train/total_loss: 0.6283, train/total_loss/avg: 0.6326, train/hateful_memes/cross_entropy: 0.6283, train/hateful_memes/cross_entropy/avg: 0.6326, max mem: 6589.0, experiment: run, epoch: 28, num_updates: 14400, iterations: 14400, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 940ms, time_since_start: 03h 39m 26s 070ms, eta: 01h 51m 30s 135ms
+2020-06-10T13:09:08 INFO: progress: 14500/22000, train/total_loss: 0.6603, train/total_loss/avg: 0.6328, train/hateful_memes/cross_entropy: 0.6603, train/hateful_memes/cross_entropy/avg: 0.6328, max mem: 6589.0, experiment: run, epoch: 28, num_updates: 14500, iterations: 14500, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 101ms, time_since_start: 03h 40m 54s 172ms, eta: 01h 50m 14s 210ms
+2020-06-10T13:10:36 INFO: progress: 14600/22000, train/total_loss: 0.6603, train/total_loss/avg: 0.6328, train/hateful_memes/cross_entropy: 0.6603, train/hateful_memes/cross_entropy/avg: 0.6328, max mem: 6589.0, experiment: run, epoch: 28, num_updates: 14600, iterations: 14600, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 974ms, time_since_start: 03h 42m 22s 147ms, eta: 01h 48m 36s 657ms
+2020-06-10T13:12:04 INFO: progress: 14700/22000, train/total_loss: 0.6611, train/total_loss/avg: 0.6332, train/hateful_memes/cross_entropy: 0.6611, train/hateful_memes/cross_entropy/avg: 0.6332, max mem: 6589.0, experiment: run, epoch: 28, num_updates: 14700, iterations: 14700, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 038ms, time_since_start: 03h 43m 50s 186ms, eta: 01h 47m 13s 271ms
+2020-06-10T13:13:32 INFO: progress: 14800/22000, train/total_loss: 0.6615, train/total_loss/avg: 0.6334, train/hateful_memes/cross_entropy: 0.6615, train/hateful_memes/cross_entropy/avg: 0.6334, max mem: 6589.0, experiment: run, epoch: 28, num_updates: 14800, iterations: 14800, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 048ms, time_since_start: 03h 45m 18s 234ms, eta: 01h 45m 45s 838ms
+2020-06-10T13:15:00 INFO: progress: 14900/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6336, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6336, max mem: 6589.0, experiment: run, epoch: 29, num_updates: 14900, iterations: 14900, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 904ms, time_since_start: 03h 46m 46s 139ms, eta: 01h 44m 07s 477ms
+2020-06-10T13:16:28 INFO: progress: 15000/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6338, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6338, max mem: 6589.0, experiment: run, epoch: 29, num_updates: 15000, iterations: 15000, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 962ms, time_since_start: 03h 48m 14s 102ms, eta: 01h 42m 43s 525ms
+2020-06-10T13:16:28 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T13:16:42 INFO: Evaluation time. Running on full validation set...
+2020-06-10T13:16:54 INFO: progress: 15000/22000, val/total_loss: 0.7356, val/hateful_memes/cross_entropy: 0.7356, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4798, num_updates: 15000, epoch: 29, iterations: 15000, max_updates: 22000, val_time: 12s 371ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T13:16:55 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T13:18:22 INFO: progress: 15100/22000, train/total_loss: 0.6621, train/total_loss/avg: 0.6342, train/hateful_memes/cross_entropy: 0.6621, train/hateful_memes/cross_entropy/avg: 0.6342, max mem: 6589.0, experiment: run, epoch: 29, num_updates: 15100, iterations: 15100, max_updates: 22000, lr: 0.00002, ups: 1.14, time: 01m 28s 037ms, time_since_start: 03h 50m 08s 335ms, eta: 01h 41m 20s 663ms
+2020-06-10T13:19:50 INFO: progress: 15200/22000, train/total_loss: 0.6621, train/total_loss/avg: 0.6338, train/hateful_memes/cross_entropy: 0.6621, train/hateful_memes/cross_entropy/avg: 0.6338, max mem: 6589.0, experiment: run, epoch: 29, num_updates: 15200, iterations: 15200, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 758ms, time_since_start: 03h 51m 36s 093ms, eta: 01h 39m 33s 544ms
+2020-06-10T13:21:18 INFO: progress: 15300/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6338, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6338, max mem: 6589.0, experiment: run, epoch: 29, num_updates: 15300, iterations: 15300, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 714ms, time_since_start: 03h 53m 03s 808ms, eta: 01h 38m 02s 769ms
+2020-06-10T13:22:46 INFO: progress: 15400/22000, train/total_loss: 0.6621, train/total_loss/avg: 0.6344, train/hateful_memes/cross_entropy: 0.6621, train/hateful_memes/cross_entropy/avg: 0.6344, max mem: 6589.0, experiment: run, epoch: 29, num_updates: 15400, iterations: 15400, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 872ms, time_since_start: 03h 54m 31s 680ms, eta: 01h 36m 45s 378ms
+2020-06-10T13:24:13 INFO: progress: 15500/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6344, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6344, max mem: 6589.0, experiment: run, epoch: 30, num_updates: 15500, iterations: 15500, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 527ms, time_since_start: 03h 55m 59s 208ms, eta: 01h 34m 54s 964ms
+2020-06-10T13:25:41 INFO: progress: 15600/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6346, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6346, max mem: 6589.0, experiment: run, epoch: 30, num_updates: 15600, iterations: 15600, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 864ms, time_since_start: 03h 57m 27s 072ms, eta: 01h 33m 48s 952ms
+2020-06-10T13:27:09 INFO: progress: 15700/22000, train/total_loss: 0.6621, train/total_loss/avg: 0.6347, train/hateful_memes/cross_entropy: 0.6621, train/hateful_memes/cross_entropy/avg: 0.6347, max mem: 6589.0, experiment: run, epoch: 30, num_updates: 15700, iterations: 15700, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 799ms, time_since_start: 03h 58m 54s 872ms, eta: 01h 32m 16s 918ms
+2020-06-10T13:28:36 INFO: progress: 15800/22000, train/total_loss: 0.6621, train/total_loss/avg: 0.6359, train/hateful_memes/cross_entropy: 0.6621, train/hateful_memes/cross_entropy/avg: 0.6359, max mem: 6589.0, experiment: run, epoch: 30, num_updates: 15800, iterations: 15800, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 716ms, time_since_start: 04h 22s 588ms, eta: 01h 30m 43s 842ms
+2020-06-10T13:30:04 INFO: progress: 15900/22000, train/total_loss: 0.6621, train/total_loss/avg: 0.6358, train/hateful_memes/cross_entropy: 0.6621, train/hateful_memes/cross_entropy/avg: 0.6358, max mem: 6589.0, experiment: run, epoch: 30, num_updates: 15900, iterations: 15900, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 759ms, time_since_start: 04h 01m 50s 348ms, eta: 01h 29m 18s 692ms
+2020-06-10T13:31:32 INFO: progress: 16000/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6360, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6360, max mem: 6589.0, experiment: run, epoch: 31, num_updates: 16000, iterations: 16000, max_updates: 22000, lr: 0.00002, ups: 1.15, time: 01m 27s 328ms, time_since_start: 04h 03m 17s 677ms, eta: 01h 27m 24s 947ms
+2020-06-10T13:31:32 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T13:31:45 INFO: Evaluation time. Running on full validation set...
+2020-06-10T13:31:54 INFO: progress: 16000/22000, val/total_loss: 0.7449, val/hateful_memes/cross_entropy: 0.7449, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5114, num_updates: 16000, epoch: 31, iterations: 16000, max_updates: 22000, val_time: 08s 693ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T13:31:55 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T13:33:22 INFO: progress: 16100/22000, train/total_loss: 0.6613, train/total_loss/avg: 0.6355, train/hateful_memes/cross_entropy: 0.6613, train/hateful_memes/cross_entropy/avg: 0.6355, max mem: 6589.0, experiment: run, epoch: 31, num_updates: 16100, iterations: 16100, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 958ms, time_since_start: 04h 05m 08s 080ms, eta: 01h 26m 34s 720ms
+2020-06-10T13:34:49 INFO: progress: 16200/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6362, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6362, max mem: 6589.0, experiment: run, epoch: 31, num_updates: 16200, iterations: 16200, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 510ms, time_since_start: 04h 06m 35s 590ms, eta: 01h 24m 40s 667ms
+2020-06-10T13:36:17 INFO: progress: 16300/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6361, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6361, max mem: 6589.0, experiment: run, epoch: 31, num_updates: 16300, iterations: 16300, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 497ms, time_since_start: 04h 08m 03s 088ms, eta: 01h 23m 12s 331ms
+2020-06-10T13:37:44 INFO: progress: 16400/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6356, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6356, max mem: 6589.0, experiment: run, epoch: 31, num_updates: 16400, iterations: 16400, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 297ms, time_since_start: 04h 09m 30s 386ms, eta: 01h 21m 33s 570ms
+2020-06-10T13:39:12 INFO: progress: 16500/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6358, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6358, max mem: 6589.0, experiment: run, epoch: 32, num_updates: 16500, iterations: 16500, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 385ms, time_since_start: 04h 10m 57s 771ms, eta: 01h 20m 10s 999ms
+2020-06-10T13:40:39 INFO: progress: 16600/22000, train/total_loss: 0.6619, train/total_loss/avg: 0.6357, train/hateful_memes/cross_entropy: 0.6619, train/hateful_memes/cross_entropy/avg: 0.6357, max mem: 6589.0, experiment: run, epoch: 32, num_updates: 16600, iterations: 16600, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 530ms, time_since_start: 04h 12m 25s 301ms, eta: 01h 18m 51s 351ms
+2020-06-10T13:42:07 INFO: progress: 16700/22000, train/total_loss: 0.6613, train/total_loss/avg: 0.6358, train/hateful_memes/cross_entropy: 0.6613, train/hateful_memes/cross_entropy/avg: 0.6358, max mem: 6589.0, experiment: run, epoch: 32, num_updates: 16700, iterations: 16700, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 337ms, time_since_start: 04h 13m 52s 639ms, eta: 01h 17m 13s 516ms
+2020-06-10T13:43:34 INFO: progress: 16800/22000, train/total_loss: 0.6610, train/total_loss/avg: 0.6358, train/hateful_memes/cross_entropy: 0.6610, train/hateful_memes/cross_entropy/avg: 0.6358, max mem: 6589.0, experiment: run, epoch: 32, num_updates: 16800, iterations: 16800, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 681ms, time_since_start: 04h 15m 20s 320ms, eta: 01h 16m 04s 007ms
+2020-06-10T13:45:02 INFO: progress: 16900/22000, train/total_loss: 0.6610, train/total_loss/avg: 0.6360, train/hateful_memes/cross_entropy: 0.6610, train/hateful_memes/cross_entropy/avg: 0.6360, max mem: 6589.0, experiment: run, epoch: 32, num_updates: 16900, iterations: 16900, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 593ms, time_since_start: 04h 16m 47s 914ms, eta: 01h 14m 31s 738ms
+2020-06-10T13:46:29 INFO: progress: 17000/22000, train/total_loss: 0.6298, train/total_loss/avg: 0.6357, train/hateful_memes/cross_entropy: 0.6298, train/hateful_memes/cross_entropy/avg: 0.6357, max mem: 6589.0, experiment: run, epoch: 32, num_updates: 17000, iterations: 17000, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 648ms, time_since_start: 04h 18m 15s 562ms, eta: 01h 13m 06s 809ms
+2020-06-10T13:46:29 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T13:46:43 INFO: Evaluation time. Running on full validation set...
+2020-06-10T13:46:52 INFO: progress: 17000/22000, val/total_loss: 0.7388, val/hateful_memes/cross_entropy: 0.7388, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4759, num_updates: 17000, epoch: 32, iterations: 17000, max_updates: 22000, val_time: 08s 735ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T13:46:53 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T13:48:20 INFO: progress: 17100/22000, train/total_loss: 0.6281, train/total_loss/avg: 0.6354, train/hateful_memes/cross_entropy: 0.6281, train/hateful_memes/cross_entropy/avg: 0.6354, max mem: 6589.0, experiment: run, epoch: 33, num_updates: 17100, iterations: 17100, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 687ms, time_since_start: 04h 20m 05s 847ms, eta: 01h 11m 40s 990ms
+2020-06-10T13:49:47 INFO: progress: 17200/22000, train/total_loss: 0.6281, train/total_loss/avg: 0.6351, train/hateful_memes/cross_entropy: 0.6281, train/hateful_memes/cross_entropy/avg: 0.6351, max mem: 6589.0, experiment: run, epoch: 33, num_updates: 17200, iterations: 17200, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 332ms, time_since_start: 04h 21m 33s 180ms, eta: 01h 09m 56s 140ms
+2020-06-10T13:51:15 INFO: progress: 17300/22000, train/total_loss: 0.6298, train/total_loss/avg: 0.6355, train/hateful_memes/cross_entropy: 0.6298, train/hateful_memes/cross_entropy/avg: 0.6355, max mem: 6589.0, experiment: run, epoch: 33, num_updates: 17300, iterations: 17300, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 650ms, time_since_start: 04h 23m 830ms, eta: 01h 08m 43s 670ms
+2020-06-10T13:52:42 INFO: progress: 17400/22000, train/total_loss: 0.6298, train/total_loss/avg: 0.6359, train/hateful_memes/cross_entropy: 0.6298, train/hateful_memes/cross_entropy/avg: 0.6359, max mem: 6589.0, experiment: run, epoch: 33, num_updates: 17400, iterations: 17400, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 672ms, time_since_start: 04h 24m 28s 502ms, eta: 01h 07m 16s 966ms
+2020-06-10T13:54:10 INFO: progress: 17500/22000, train/total_loss: 0.6610, train/total_loss/avg: 0.6360, train/hateful_memes/cross_entropy: 0.6610, train/hateful_memes/cross_entropy/avg: 0.6360, max mem: 6589.0, experiment: run, epoch: 33, num_updates: 17500, iterations: 17500, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 822ms, time_since_start: 04h 25m 56s 325ms, eta: 01h 05m 55s 968ms
+2020-06-10T13:55:38 INFO: progress: 17600/22000, train/total_loss: 0.6610, train/total_loss/avg: 0.6369, train/hateful_memes/cross_entropy: 0.6610, train/hateful_memes/cross_entropy/avg: 0.6369, max mem: 6589.0, experiment: run, epoch: 34, num_updates: 17600, iterations: 17600, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 713ms, time_since_start: 04h 27m 24s 038ms, eta: 01h 04m 23s 262ms
+2020-06-10T13:57:06 INFO: progress: 17700/22000, train/total_loss: 0.6298, train/total_loss/avg: 0.6366, train/hateful_memes/cross_entropy: 0.6298, train/hateful_memes/cross_entropy/avg: 0.6366, max mem: 6589.0, experiment: run, epoch: 34, num_updates: 17700, iterations: 17700, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 091ms, time_since_start: 04h 28m 52s 130ms, eta: 01h 03m 11s 731ms
+2020-06-10T13:58:34 INFO: progress: 17800/22000, train/total_loss: 0.6253, train/total_loss/avg: 0.6361, train/hateful_memes/cross_entropy: 0.6253, train/hateful_memes/cross_entropy/avg: 0.6361, max mem: 6589.0, experiment: run, epoch: 34, num_updates: 17800, iterations: 17800, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 388ms, time_since_start: 04h 30m 20s 519ms, eta: 01h 01m 56s 042ms
+2020-06-10T14:00:03 INFO: progress: 17900/22000, train/total_loss: 0.6298, train/total_loss/avg: 0.6365, train/hateful_memes/cross_entropy: 0.6298, train/hateful_memes/cross_entropy/avg: 0.6365, max mem: 6589.0, experiment: run, epoch: 34, num_updates: 17900, iterations: 17900, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 520ms, time_since_start: 04h 31m 49s 040ms, eta: 01h 32s 973ms
+2020-06-10T14:01:32 INFO: progress: 18000/22000, train/total_loss: 0.6282, train/total_loss/avg: 0.6364, train/hateful_memes/cross_entropy: 0.6282, train/hateful_memes/cross_entropy/avg: 0.6364, max mem: 6589.0, experiment: run, epoch: 34, num_updates: 18000, iterations: 18000, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 636ms, time_since_start: 04h 33m 17s 677ms, eta: 59m 09s 023ms
+2020-06-10T14:01:32 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T14:01:45 INFO: Evaluation time. Running on full validation set...
+2020-06-10T14:01:54 INFO: progress: 18000/22000, val/total_loss: 0.7309, val/hateful_memes/cross_entropy: 0.7309, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5086, num_updates: 18000, epoch: 34, iterations: 18000, max_updates: 22000, val_time: 08s 799ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T14:01:55 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T14:03:23 INFO: progress: 18100/22000, train/total_loss: 0.6282, train/total_loss/avg: 0.6360, train/hateful_memes/cross_entropy: 0.6282, train/hateful_memes/cross_entropy/avg: 0.6360, max mem: 6589.0, experiment: run, epoch: 35, num_updates: 18100, iterations: 18100, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 610ms, time_since_start: 04h 35m 08s 904ms, eta: 57m 39s 258ms
+2020-06-10T14:04:51 INFO: progress: 18200/22000, train/total_loss: 0.6282, train/total_loss/avg: 0.6368, train/hateful_memes/cross_entropy: 0.6282, train/hateful_memes/cross_entropy/avg: 0.6368, max mem: 6589.0, experiment: run, epoch: 35, num_updates: 18200, iterations: 18200, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 168ms, time_since_start: 04h 36m 37s 073ms, eta: 55m 53s 753ms
+2020-06-10T14:06:19 INFO: progress: 18300/22000, train/total_loss: 0.6282, train/total_loss/avg: 0.6363, train/hateful_memes/cross_entropy: 0.6282, train/hateful_memes/cross_entropy/avg: 0.6363, max mem: 6589.0, experiment: run, epoch: 35, num_updates: 18300, iterations: 18300, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 992ms, time_since_start: 04h 38m 05s 065ms, eta: 54m 18s 971ms
+2020-06-10T14:07:47 INFO: progress: 18400/22000, train/total_loss: 0.6298, train/total_loss/avg: 0.6367, train/hateful_memes/cross_entropy: 0.6298, train/hateful_memes/cross_entropy/avg: 0.6367, max mem: 6589.0, experiment: run, epoch: 35, num_updates: 18400, iterations: 18400, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 080ms, time_since_start: 04h 39m 33s 145ms, eta: 52m 54s 056ms
+2020-06-10T14:09:15 INFO: progress: 18500/22000, train/total_loss: 0.6282, train/total_loss/avg: 0.6362, train/hateful_memes/cross_entropy: 0.6282, train/hateful_memes/cross_entropy/avg: 0.6362, max mem: 6589.0, experiment: run, epoch: 35, num_updates: 18500, iterations: 18500, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 184ms, time_since_start: 04h 41m 01s 330ms, eta: 51m 29s 549ms
+2020-06-10T14:10:44 INFO: progress: 18600/22000, train/total_loss: 0.6298, train/total_loss/avg: 0.6365, train/hateful_memes/cross_entropy: 0.6298, train/hateful_memes/cross_entropy/avg: 0.6365, max mem: 6589.0, experiment: run, epoch: 35, num_updates: 18600, iterations: 18600, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 386ms, time_since_start: 04h 42m 29s 717ms, eta: 50m 08s 149ms
+2020-06-10T14:12:12 INFO: progress: 18700/22000, train/total_loss: 0.6282, train/total_loss/avg: 0.6364, train/hateful_memes/cross_entropy: 0.6282, train/hateful_memes/cross_entropy/avg: 0.6364, max mem: 6589.0, experiment: run, epoch: 36, num_updates: 18700, iterations: 18700, max_updates: 22000, lr: 0.00001, ups: 1.14, time: 01m 28s 153ms, time_since_start: 04h 43m 57s 870ms, eta: 48m 31s 974ms
+2020-06-10T14:13:40 INFO: progress: 18800/22000, train/total_loss: 0.6282, train/total_loss/avg: 0.6364, train/hateful_memes/cross_entropy: 0.6282, train/hateful_memes/cross_entropy/avg: 0.6364, max mem: 6589.0, experiment: run, epoch: 36, num_updates: 18800, iterations: 18800, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 864ms, time_since_start: 04h 45m 25s 734ms, eta: 46m 54s 462ms
+2020-06-10T14:15:07 INFO: progress: 18900/22000, train/total_loss: 0.6282, train/total_loss/avg: 0.6369, train/hateful_memes/cross_entropy: 0.6282, train/hateful_memes/cross_entropy/avg: 0.6369, max mem: 6589.0, experiment: run, epoch: 36, num_updates: 18900, iterations: 18900, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 656ms, time_since_start: 04h 46m 53s 391ms, eta: 45m 20s 068ms
+2020-06-10T14:16:35 INFO: progress: 19000/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6377, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6377, max mem: 6589.0, experiment: run, epoch: 36, num_updates: 19000, iterations: 19000, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 732ms, time_since_start: 04h 48m 21s 123ms, eta: 43m 54s 597ms
+2020-06-10T14:16:35 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T14:16:48 INFO: Evaluation time. Running on full validation set...
+2020-06-10T14:16:57 INFO: progress: 19000/22000, val/total_loss: 0.7386, val/hateful_memes/cross_entropy: 0.7386, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4711, num_updates: 19000, epoch: 36, iterations: 19000, max_updates: 22000, val_time: 08s 745ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T14:16:58 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T14:18:25 INFO: progress: 19100/22000, train/total_loss: 0.6635, train/total_loss/avg: 0.6382, train/hateful_memes/cross_entropy: 0.6635, train/hateful_memes/cross_entropy/avg: 0.6382, max mem: 6589.0, experiment: run, epoch: 36, num_updates: 19100, iterations: 19100, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 971ms, time_since_start: 04h 50m 11s 316ms, eta: 42m 33s 736ms
+2020-06-10T14:19:53 INFO: progress: 19200/22000, train/total_loss: 0.6637, train/total_loss/avg: 0.6384, train/hateful_memes/cross_entropy: 0.6637, train/hateful_memes/cross_entropy/avg: 0.6384, max mem: 6589.0, experiment: run, epoch: 37, num_updates: 19200, iterations: 19200, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 344ms, time_since_start: 04h 51m 38s 661ms, eta: 40m 48s 092ms
+2020-06-10T14:21:20 INFO: progress: 19300/22000, train/total_loss: 0.6637, train/total_loss/avg: 0.6388, train/hateful_memes/cross_entropy: 0.6637, train/hateful_memes/cross_entropy/avg: 0.6388, max mem: 6589.0, experiment: run, epoch: 37, num_updates: 19300, iterations: 19300, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 393ms, time_since_start: 04h 53m 06s 054ms, eta: 39m 21s 987ms
+2020-06-10T14:22:47 INFO: progress: 19400/22000, train/total_loss: 0.6635, train/total_loss/avg: 0.6384, train/hateful_memes/cross_entropy: 0.6635, train/hateful_memes/cross_entropy/avg: 0.6384, max mem: 6589.0, experiment: run, epoch: 37, num_updates: 19400, iterations: 19400, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 324ms, time_since_start: 04h 54m 33s 379ms, eta: 37m 52s 708ms
+2020-06-10T14:24:14 INFO: progress: 19500/22000, train/total_loss: 0.6637, train/total_loss/avg: 0.6387, train/hateful_memes/cross_entropy: 0.6637, train/hateful_memes/cross_entropy/avg: 0.6387, max mem: 6589.0, experiment: run, epoch: 37, num_updates: 19500, iterations: 19500, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 175ms, time_since_start: 04h 56m 555ms, eta: 36m 21s 575ms
+2020-06-10T14:25:42 INFO: progress: 19600/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6384, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6384, max mem: 6589.0, experiment: run, epoch: 37, num_updates: 19600, iterations: 19600, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 214ms, time_since_start: 04h 57m 27s 770ms, eta: 34m 55s 250ms
+2020-06-10T14:27:09 INFO: progress: 19700/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6380, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6380, max mem: 6589.0, experiment: run, epoch: 38, num_updates: 19700, iterations: 19700, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 104ms, time_since_start: 04h 58m 54s 875ms, eta: 33m 25s 419ms
+2020-06-10T14:28:36 INFO: progress: 19800/22000, train/total_loss: 0.6637, train/total_loss/avg: 0.6383, train/hateful_memes/cross_entropy: 0.6637, train/hateful_memes/cross_entropy/avg: 0.6383, max mem: 6589.0, experiment: run, epoch: 38, num_updates: 19800, iterations: 19800, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 587ms, time_since_start: 05h 22s 462ms, eta: 32m 08s 849ms
+2020-06-10T14:30:04 INFO: progress: 19900/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6383, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6383, max mem: 6589.0, experiment: run, epoch: 38, num_updates: 19900, iterations: 19900, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 526ms, time_since_start: 05h 01m 49s 989ms, eta: 30m 39s 905ms
+2020-06-10T14:31:31 INFO: progress: 20000/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6380, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6380, max mem: 6589.0, experiment: run, epoch: 38, num_updates: 20000, iterations: 20000, max_updates: 22000, lr: 0.00001, ups: 1.15, time: 01m 27s 596ms, time_since_start: 05h 03m 17s 586ms, eta: 29m 13s 687ms
+2020-06-10T14:31:31 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T14:31:44 INFO: Evaluation time. Running on full validation set...
+2020-06-10T14:31:53 INFO: progress: 20000/22000, val/total_loss: 0.7347, val/hateful_memes/cross_entropy: 0.7347, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5182, num_updates: 20000, epoch: 38, iterations: 20000, max_updates: 22000, val_time: 08s 705ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T14:31:54 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T14:33:21 INFO: progress: 20100/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6380, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6380, max mem: 6589.0, experiment: run, epoch: 38, num_updates: 20100, iterations: 20100, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 030ms, time_since_start: 05h 05m 07s 543ms, eta: 27m 54s 256ms
+2020-06-10T14:34:49 INFO: progress: 20200/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6381, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6381, max mem: 6589.0, experiment: run, epoch: 38, num_updates: 20200, iterations: 20200, max_updates: 22000, lr: 0., ups: 1.15, time: 01m 27s 695ms, time_since_start: 05h 06m 35s 239ms, eta: 26m 20s 106ms
+2020-06-10T14:36:17 INFO: progress: 20300/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6375, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6375, max mem: 6589.0, experiment: run, epoch: 39, num_updates: 20300, iterations: 20300, max_updates: 22000, lr: 0., ups: 1.15, time: 01m 27s 899ms, time_since_start: 05h 08m 03s 138ms, eta: 24m 55s 790ms
+2020-06-10T14:37:45 INFO: progress: 20400/22000, train/total_loss: 0.6269, train/total_loss/avg: 0.6373, train/hateful_memes/cross_entropy: 0.6269, train/hateful_memes/cross_entropy/avg: 0.6373, max mem: 6589.0, experiment: run, epoch: 39, num_updates: 20400, iterations: 20400, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 266ms, time_since_start: 05h 09m 31s 405ms, eta: 23m 33s 678ms
+2020-06-10T14:39:14 INFO: progress: 20500/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6378, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6378, max mem: 6589.0, experiment: run, epoch: 39, num_updates: 20500, iterations: 20500, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 349ms, time_since_start: 05h 10m 59s 754ms, eta: 22m 06s 562ms
+2020-06-10T14:40:42 INFO: progress: 20600/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6380, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6380, max mem: 6589.0, experiment: run, epoch: 39, num_updates: 20600, iterations: 20600, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 255ms, time_since_start: 05h 12m 28s 010ms, eta: 20m 36s 818ms
+2020-06-10T14:42:10 INFO: progress: 20700/22000, train/total_loss: 0.6290, train/total_loss/avg: 0.6380, train/hateful_memes/cross_entropy: 0.6290, train/hateful_memes/cross_entropy/avg: 0.6380, max mem: 6589.0, experiment: run, epoch: 39, num_updates: 20700, iterations: 20700, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 294ms, time_since_start: 05h 13m 56s 305ms, eta: 19m 08s 981ms
+2020-06-10T14:43:38 INFO: progress: 20800/22000, train/total_loss: 0.6624, train/total_loss/avg: 0.6383, train/hateful_memes/cross_entropy: 0.6624, train/hateful_memes/cross_entropy/avg: 0.6383, max mem: 6589.0, experiment: run, epoch: 40, num_updates: 20800, iterations: 20800, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 176ms, time_since_start: 05h 15m 24s 482ms, eta: 17m 39s 180ms
+2020-06-10T14:45:07 INFO: progress: 20900/22000, train/total_loss: 0.6265, train/total_loss/avg: 0.6382, train/hateful_memes/cross_entropy: 0.6265, train/hateful_memes/cross_entropy/avg: 0.6382, max mem: 6589.0, experiment: run, epoch: 40, num_updates: 20900, iterations: 20900, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 208ms, time_since_start: 05h 16m 52s 690ms, eta: 16m 11s 263ms
+2020-06-10T14:46:35 INFO: progress: 21000/22000, train/total_loss: 0.6265, train/total_loss/avg: 0.6389, train/hateful_memes/cross_entropy: 0.6265, train/hateful_memes/cross_entropy/avg: 0.6389, max mem: 6589.0, experiment: run, epoch: 40, num_updates: 21000, iterations: 21000, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 193ms, time_since_start: 05h 18m 20s 883ms, eta: 14m 42s 813ms
+2020-06-10T14:46:35 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T14:46:48 INFO: Evaluation time. Running on full validation set...
+2020-06-10T14:46:59 INFO: progress: 21000/22000, val/total_loss: 0.7365, val/hateful_memes/cross_entropy: 0.7365, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5152, num_updates: 21000, epoch: 40, iterations: 21000, max_updates: 22000, val_time: 10s 195ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T14:47:00 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T14:48:27 INFO: progress: 21100/22000, train/total_loss: 0.6265, train/total_loss/avg: 0.6390, train/hateful_memes/cross_entropy: 0.6265, train/hateful_memes/cross_entropy/avg: 0.6390, max mem: 6589.0, experiment: run, epoch: 40, num_updates: 21100, iterations: 21100, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 549ms, time_since_start: 05h 20m 13s 533ms, eta: 13m 17s 745ms
+2020-06-10T14:49:56 INFO: progress: 21200/22000, train/total_loss: 0.6259, train/total_loss/avg: 0.6389, train/hateful_memes/cross_entropy: 0.6259, train/hateful_memes/cross_entropy/avg: 0.6389, max mem: 6589.0, experiment: run, epoch: 40, num_updates: 21200, iterations: 21200, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 222ms, time_since_start: 05h 21m 41s 755ms, eta: 11m 46s 483ms
+2020-06-10T14:51:24 INFO: progress: 21300/22000, train/total_loss: 0.6259, train/total_loss/avg: 0.6392, train/hateful_memes/cross_entropy: 0.6259, train/hateful_memes/cross_entropy/avg: 0.6392, max mem: 6589.0, experiment: run, epoch: 41, num_updates: 21300, iterations: 21300, max_updates: 22000, lr: 0., ups: 1.15, time: 01m 27s 992ms, time_since_start: 05h 23m 09s 748ms, eta: 10m 16s 562ms
+2020-06-10T14:52:51 INFO: progress: 21400/22000, train/total_loss: 0.6259, train/total_loss/avg: 0.6388, train/hateful_memes/cross_entropy: 0.6259, train/hateful_memes/cross_entropy/avg: 0.6388, max mem: 6589.0, experiment: run, epoch: 41, num_updates: 21400, iterations: 21400, max_updates: 22000, lr: 0., ups: 1.15, time: 01m 27s 765ms, time_since_start: 05h 24m 37s 514ms, eta: 08m 47s 121ms
+2020-06-10T14:54:19 INFO: progress: 21500/22000, train/total_loss: 0.6257, train/total_loss/avg: 0.6381, train/hateful_memes/cross_entropy: 0.6257, train/hateful_memes/cross_entropy/avg: 0.6381, max mem: 6589.0, experiment: run, epoch: 41, num_updates: 21500, iterations: 21500, max_updates: 22000, lr: 0., ups: 1.15, time: 01m 27s 990ms, time_since_start: 05h 26m 05s 504ms, eta: 07m 20s 390ms
+2020-06-10T14:55:47 INFO: progress: 21600/22000, train/total_loss: 0.6257, train/total_loss/avg: 0.6378, train/hateful_memes/cross_entropy: 0.6257, train/hateful_memes/cross_entropy/avg: 0.6378, max mem: 6589.0, experiment: run, epoch: 41, num_updates: 21600, iterations: 21600, max_updates: 22000, lr: 0., ups: 1.15, time: 01m 27s 771ms, time_since_start: 05h 27m 33s 275ms, eta: 05m 51s 437ms
+2020-06-10T14:57:15 INFO: progress: 21700/22000, train/total_loss: 0.6259, train/total_loss/avg: 0.6383, train/hateful_memes/cross_entropy: 0.6259, train/hateful_memes/cross_entropy/avg: 0.6383, max mem: 6589.0, experiment: run, epoch: 41, num_updates: 21700, iterations: 21700, max_updates: 22000, lr: 0., ups: 1.15, time: 01m 27s 858ms, time_since_start: 05h 29m 01s 134ms, eta: 04m 23s 840ms
+2020-06-10T14:58:43 INFO: progress: 21800/22000, train/total_loss: 0.6257, train/total_loss/avg: 0.6379, train/hateful_memes/cross_entropy: 0.6257, train/hateful_memes/cross_entropy/avg: 0.6379, max mem: 6589.0, experiment: run, epoch: 41, num_updates: 21800, iterations: 21800, max_updates: 22000, lr: 0., ups: 1.15, time: 01m 27s 749ms, time_since_start: 05h 30m 28s 884ms, eta: 02m 55s 674ms
+2020-06-10T15:00:11 INFO: progress: 21900/22000, train/total_loss: 0.6259, train/total_loss/avg: 0.6383, train/hateful_memes/cross_entropy: 0.6259, train/hateful_memes/cross_entropy/avg: 0.6383, max mem: 6589.0, experiment: run, epoch: 42, num_updates: 21900, iterations: 21900, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 044ms, time_since_start: 05h 31m 56s 929ms, eta: 01m 28s 132ms
+2020-06-10T15:01:39 INFO: progress: 22000/22000, train/total_loss: 0.6265, train/total_loss/avg: 0.6384, train/hateful_memes/cross_entropy: 0.6265, train/hateful_memes/cross_entropy/avg: 0.6384, max mem: 6589.0, experiment: run, epoch: 42, num_updates: 22000, iterations: 22000, max_updates: 22000, lr: 0., ups: 1.14, time: 01m 28s 288ms, time_since_start: 05h 33m 25s 217ms, eta: 0ms
+2020-06-10T15:01:39 INFO: Checkpoint time. Saving a checkpoint.
+2020-06-10T15:01:52 INFO: Evaluation time. Running on full validation set...
+2020-06-10T15:02:03 INFO: progress: 22000/22000, val/total_loss: 0.7350, val/hateful_memes/cross_entropy: 0.7350, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4747, num_updates: 22000, epoch: 42, iterations: 22000, max_updates: 22000, val_time: 10s 834ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T15:02:04 WARNING: /opt/conda/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+
+2020-06-10T15:02:04 INFO: Stepping into final validation check
+2020-06-10T15:02:04 INFO: Evaluation time. Running on full validation set...
+2020-06-10T15:02:13 INFO: progress: 22001/22000, val/total_loss: 0.7350, val/hateful_memes/cross_entropy: 0.7350, val/hateful_memes/accuracy: 0.5000, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4960, num_updates: 22001, epoch: 42, iterations: 22001, max_updates: 22000, val_time: 08s 905ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.628972
+2020-06-10T15:02:13 INFO: Restoring checkpoint
+2020-06-10T15:02:13 INFO: Loading checkpoint
+2020-06-10T15:02:24 INFO: Checkpoint loaded
+2020-06-10T15:02:25 INFO: Finished run in 05h 34m 11s 098ms

@@ -1,5 +1,5 @@
 includes:
-- ./defaults.yaml
+- ./defaults_custom.yaml
 
 checkpoint:
   resume_pretrained: true

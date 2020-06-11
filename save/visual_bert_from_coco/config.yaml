@@ -1,7 +1,7 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 49171796
+  seed: 54860959
   experiment_name: run
   max_updates: 22000
   max_epochs: null
@@ -41,7 +41,7 @@ evaluation:
   - accuracy
   - binary_f1
   - roc_auc
-  predict: 'true'
+  predict: false
   predict_file_format: csv
 model_config:
   visual_bert:
@@ -141,7 +141,7 @@ dataset_config:
 datasets: hateful_memes
 model: visual_bert
 config: configs/visual_bert/from_coco_custom.yaml
-run_type: val
+run_type: train
 optimizer:
   type: adam_w
   params:
@@ -157,7 +157,7 @@ env:
   dataset_zoo: configs/zoo/datasets.yaml
   model_zoo: configs/zoo/models.yaml
   data_dir: /home/jupyter/meme_hateful_detection/data/raw
-  save_dir: /home/jupyter/meme_hateful_detection/save
+  save_dir: /home/jupyter/meme_hateful_detection/save/visual_bert_from_coco
   log_dir: /home/jupyter/meme_hateful_detection/logs
   report_dir: /home/jupyter/meme_hateful_detection/save/reports
   tensorboard_logdir: /home/jupyter/meme_hateful_detection/tensor_logs
@@ -174,7 +174,7 @@ checkpoint:
   resume_file: null
   resume_best: false
   resume_pretrained: true
-  resume_zoo: visual_bert.finetuned.hateful_memes.from_coco
+  resume_zoo: visual_bert.pretrained.coco
   zoo_config_override: false
   pretrained_state_mapping:
     model.bert: model.bert

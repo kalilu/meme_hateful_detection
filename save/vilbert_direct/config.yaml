@@ -1,7 +1,7 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 49171796
+  seed: 1903224
   experiment_name: run
   max_updates: 22000
   max_epochs: null
@@ -41,25 +41,81 @@ evaluation:
   - accuracy
   - binary_f1
   - roc_auc
-  predict: 'true'
+  predict: false
   predict_file_format: csv
 model_config:
-  visual_bert:
+  vilbert:
     bert_model_name: bert-base-uncased
     training_head_type: classification
     visual_embedding_dim: 2048
     special_visual_initialize: true
+    hard_cap_seq_len: null
+    cut_first: text
     embedding_strategy: plain
     bypass_transformer: false
     output_attentions: false
     output_hidden_states: false
+    text_only: false
     random_initialize: false
     freeze_base: false
     finetune_lr_multiplier: 1
+    attention_probs_dropout_prob: 0.1
+    layer_norm_eps: 1.0e-12
+    hidden_act: gelu
+    hidden_dropout_prob: 0.1
+    hidden_size: 768
+    initializer_range: 0.02
+    intermediate_size: 3072
+    max_position_embeddings: 512
+    num_attention_heads: 12
+    num_hidden_layers: 12
+    type_vocab_size: 2
+    vocab_size: 30522
+    v_feature_size: 2048
+    v_target_size: 1601
+    v_hidden_size: 1024
+    v_num_hidden_layers: 6
+    v_num_attention_heads: 8
+    v_intermediate_size: 1024
+    bi_hidden_size: 1024
+    bi_num_attention_heads: 8
+    bi_intermediate_size: 1024
+    bi_attention_type: 1
+    v_attention_probs_dropout_prob: 0.1
+    v_hidden_act: gelu
+    v_hidden_dropout_prob: 0.1
+    v_initializer_range: 0.02
+    v_biattention_id:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    t_biattention_id:
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    pooling_method: mul
+    fusion_method: mul
+    fast_mode: false
+    with_coattention: true
+    dynamic_attention: false
+    in_batch_pairs: false
+    task_specific_tokens: false
+    fixed_v_layer: 0
+    fixed_t_layer: 0
+    visualization: false
+    visual_target: 0
+    objective: 0
+    num_negative: 128
+    model: vilbert
     num_labels: 2
     losses:
     - cross_entropy
-    model: visual_bert
 dataset_config:
   hateful_memes:
     data_dir: /home/jupyter/meme_hateful_detection/data/raw/datasets
@@ -139,13 +195,13 @@ dataset_config:
               - 0.14380469
     return_features_info: true
 datasets: hateful_memes
-model: visual_bert
-config: configs/visual_bert/from_coco_custom.yaml
-run_type: val
+model: vilbert
+config: configs/vilbert/defaults_custom.yaml
+run_type: train
 optimizer:
   type: adam_w
   params:
-    lr: 5.0e-05
+    lr: 1.0e-05
     eps: 1.0e-08
 scheduler:
   type: warmup_linear
@@ -157,7 +213,7 @@ env:
   dataset_zoo: configs/zoo/datasets.yaml
   model_zoo: configs/zoo/models.yaml
   data_dir: /home/jupyter/meme_hateful_detection/data/raw
-  save_dir: /home/jupyter/meme_hateful_detection/save
+  save_dir: /home/jupyter/meme_hateful_detection/save/vilbert_direct
   log_dir: /home/jupyter/meme_hateful_detection/logs
   report_dir: /home/jupyter/meme_hateful_detection/save/reports
   tensorboard_logdir: /home/jupyter/meme_hateful_detection/tensor_logs
@@ -173,8 +229,8 @@ checkpoint:
   resume: false
   resume_file: null
   resume_best: false
-  resume_pretrained: true
-  resume_zoo: visual_bert.finetuned.hateful_memes.from_coco
+  resume_pretrained: false
+  resume_zoo: null
   zoo_config_override: false
   pretrained_state_mapping:
     model.bert: model.bert

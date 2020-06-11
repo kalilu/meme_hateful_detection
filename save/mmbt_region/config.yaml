@@ -1,7 +1,7 @@
 config_version: 1.0
 training:
   trainer: base_trainer
-  seed: 49171796
+  seed: 42854425
   experiment_name: run
   max_updates: 22000
   max_epochs: null
@@ -34,32 +34,52 @@ training:
   device: cuda
   local_rank: null
   verbose_dump: false
-  find_unused_parameters: true
+  find_unused_parameters: false
   evaluate_metrics: false
 evaluation:
   metrics:
   - accuracy
   - binary_f1
   - roc_auc
-  predict: 'true'
+  predict: false
   predict_file_format: csv
 model_config:
-  visual_bert:
-    bert_model_name: bert-base-uncased
+  mmbt:
     training_head_type: classification
-    visual_embedding_dim: 2048
-    special_visual_initialize: true
-    embedding_strategy: plain
-    bypass_transformer: false
-    output_attentions: false
-    output_hidden_states: false
-    random_initialize: false
-    freeze_base: false
+    bert_model_name: bert-base-uncased
+    direct_features_input: true
+    freeze_text: false
+    freeze_modal: false
+    freeze_complete_base: false
     finetune_lr_multiplier: 1
+    modal_hidden_size: 2048
+    text_hidden_size: 768
     num_labels: 2
+    modal_encoder:
+      type: finetune_faster_rcnn_fpn_fc7
+      params:
+        pretrained: true
+        pool_type: avg
+        num_output_features: 1
+        in_dim: 2048
+        bias_file: models/detectron.defaults/fc7_b.pkl
+        weights_file: models/detectron.defaults/fc7_w.pkl
+        model_data_dir: /home/jupyter/meme_hateful_detection/data/raw
+    use_modal_start_token: true
+    use_modal_end_token: true
+    text_encoder:
+      type: transformer
+      params:
+        bert_model_name: bert-base-uncased
+        hidden_size: 768
+        num_hidden_layers: 12
+        num_attention_heads: 12
+        output_attentions: false
+        output_hidden_states: false
     losses:
-    - cross_entropy
-    model: visual_bert
+    - type: cross_entropy
+    model_data_dir: /home/jupyter/meme_hateful_detection/data/raw
+    model: mmbt
 dataset_config:
   hateful_memes:
     data_dir: /home/jupyter/meme_hateful_detection/data/raw/datasets
@@ -139,9 +159,9 @@ dataset_config:
               - 0.14380469
     return_features_info: true
 datasets: hateful_memes
-model: visual_bert
-config: configs/visual_bert/from_coco_custom.yaml
-run_type: val
+model: mmbt
+config: configs/mmbt/with_features_custom.yaml
+run_type: train
 optimizer:
   type: adam_w
   params:
@@ -157,7 +177,7 @@ env:
   dataset_zoo: configs/zoo/datasets.yaml
   model_zoo: configs/zoo/models.yaml
   data_dir: /home/jupyter/meme_hateful_detection/data/raw
-  save_dir: /home/jupyter/meme_hateful_detection/save
+  save_dir: /home/jupyter/meme_hateful_detection/save/mmbt_region
   log_dir: /home/jupyter/meme_hateful_detection/logs
   report_dir: /home/jupyter/meme_hateful_detection/save/reports
   tensorboard_logdir: /home/jupyter/meme_hateful_detection/tensor_logs
@@ -173,11 +193,11 @@ checkpoint:
   resume: false
   resume_file: null
   resume_best: false
-  resume_pretrained: true
-  resume_zoo: visual_bert.finetuned.hateful_memes.from_coco
+  resume_pretrained: false
+  resume_zoo: null
   zoo_config_override: false
   pretrained_state_mapping:
-    model.bert: model.bert
+    bert: bert
   save_git_details: true
   reset:
     all: false
