@@ -1,12 +1,7 @@
-meme_hateful_detection
-==============================
-
-Meme sentiment analysis using NLP
-
 #  Final Project Ironhack Data Bootcamp: Meme sentiment detection using Machine Learning
-
+========================================================================================
 Karla Vizcarra
-<img src="./img/haters2.gif" />
+<img src="./reports/figures/haters2.gif" />
 *Data Part Time Barcelona Dic 2019*
 
 ## Content
@@ -56,7 +51,6 @@ Project Organization
 ------------
 
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
     │   ├── external       <- Data from third party sources.
