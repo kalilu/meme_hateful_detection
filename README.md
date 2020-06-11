@@ -11,6 +11,7 @@ Karla Vizcarra
 - [Dataset](#dataset)
 - [Project Organization](#org)
 - [Results](#results)
+- [Next steps](#next)
 
 <a name="definition"></a>
 ## Meme sentiment definition
@@ -49,6 +50,8 @@ dev.jsonl - the development set
 test.jsonl - the test set
 
 *Image is a compilation of assets, including ©Getty Image.*
+
+<img src="./reports/figures/dataset.png" />
 
 All the information about the dataset and the challenge can be found in: https://ai.facebook.com/blog/hateful-memes-challenge-and-data-set
 
@@ -92,10 +95,23 @@ All the information about the dataset and the challenge can be found in: https:/
     └── tensor_logs        <- The logs used by tensorflow to store the metrics
 
 --------
-- [Results](#results)
+<a name="results"></a>
+## Results
 Overall the multimodal models are more accurate compared to unimodal models.
 
 <img src="./reports/figures/train_res.png" />
 <img src="./reports/figures/val_res.png" />
+
+We can conclude that:
+
+- In case of multiple types of data we have to look at different approaches
+- To classify hateful meme detection it's a dificult task, even for humans
+- Regulate content it's strategic for social media companies.
+
+<a name="next"></a>
+## Next steps
+- Improve custom configuration to see how accuracy improve
+- Train the models with other datasets 
+- Try other approaches like Joint fusion and Common space fusion
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
